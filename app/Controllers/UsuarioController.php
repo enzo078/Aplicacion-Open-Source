@@ -15,7 +15,7 @@ class UsuarioController extends BaseController{
     //Obtener todos los usuarios
     public function index(){
         $usuarios = $this->usuarioModel->findAll();
-        return $this->respond($usuarios)
+        return $this->respond($usuarios);
     }
 
     //Obtener un usuario por id
@@ -24,7 +24,7 @@ class UsuarioController extends BaseController{
         if($usuario){
             return $this->respond($usuario);
         }else{
-            return $this->failNotFound('Usuario no encontrado');
+            return $this->failNotFound('No se encontro al usuario');
         }
     }
 
@@ -33,20 +33,20 @@ class UsuarioController extends BaseController{
         $data = $this->request->getPost();
 
         if($this->usuarioModel->insert($data)){
-            return $this->respondCreated(['message' => 'Usuario creado correctamente']);
+            return $this->respondCreated(['message' => 'Usuario creado']);
         }
         return $this->fail ('Error al crear el usuario');
     }
 
-    //Actualizar usuario
+    // Actualizar usuario
     public function update($id = null){
         $data = $this->request->getRawInput();
 
-        if($this->usuarioModel->update($id, $data)){
-            return $this->respond(['message' => 'Usuario actualizado correctamente']);
+        if ($this->usuarioModel->update($id, $data)) {
+            return $this->respond(['message' => 'Usuario actualizado']);
         }
         return $this->fail('Error al actualizar el usuario');
-    }
+}
 
     //Eliminar usuario
     public function delete($id = null){
