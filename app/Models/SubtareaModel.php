@@ -12,4 +12,5 @@ class SubtareaModel extends Model
         'descripcion', 'estado', 'prioridad', 'fecha_vencimiento',
         'comentario', 'responsable_id', 'tarea_id', 'color'
     ];
+    protected $useTimestamps = true;
 }
