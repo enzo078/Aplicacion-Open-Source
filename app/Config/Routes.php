@@ -7,5 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('tareas', 'TareaController::index');
-$routes->get('usuario/registro', 'UsuarioController::registro');
-$routes->post('usuario/registro', 'UsuarioController::guardar');
+$routes->get('auth/registro', 'AuthController::registro');
+$routes->post('auth/registro', 'AuthController::guardar');
+$routes->get('auth/login', 'AuthController::mostrarLogin');
+$routes->post('auth/login', 'AuthController::login');

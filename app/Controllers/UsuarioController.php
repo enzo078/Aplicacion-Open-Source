@@ -32,6 +32,25 @@ class UsuarioController extends BaseController
         }
     }
 
+    //Obtener usuarios por email o por username
+    public function findByEmailorUsername($data = null)
+    {
+        $usuario = null;
+        
+        if(filter_var($data, FILTER_VALIDATE_EMAIL)){
+            $usuario = $this->usuarioModel->where('email', $data)->first();
+        }
+        else {
+            $usuario = $this->usuarioModel->where('username', $data)->first();
+        }
+
+        if ($usuario){
+            return $this->respond($usuario);
+        } else {
+            return $this->failNotFound('No se encontro un usuario con este correo o nombre de usuario');
+        }
+    }
+
     // Crear nuevo usuario
     public function create()
     {
@@ -44,34 +63,6 @@ class UsuarioController extends BaseController
             return $this->respondCreated(['message' => 'Usuario creado']);
         }
         return $this->fail('Error al crear el usuario');
-    }
-
-    // Mostrar el formulario de registro
-    public function registro()
-    {
-        return view('usuarios/registro');
-    }
-
-    // Procesar el registro
-    public function guardar()
-    {
-        $data = $this->request->getPost();
-
-        // Verificar que el email no esté registrado
-        $usuarioExistente = $this->usuarioModel->where('email', $data['email'])->first();
-        if ($usuarioExistente) {
-            return redirect()->back()->with('error', 'El correo electrónico ya está registrado.');
-        }
-
-        // Hash de la contraseña
-        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
-        // Insertar usuario en la base de datos
-        if ($this->usuarioModel->insert($data)) {
-            return redirect()->to('/login')->with('message', 'Usuario registrado con éxito. Inicia sesión.');
-        }
-
-        return redirect()->back()->with('error', 'Hubo un problema al registrar el usuario.');
     }
 
     // Actualizar usuario
