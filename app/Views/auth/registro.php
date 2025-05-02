@@ -17,12 +17,15 @@
     <h1>Registro de Usuario</h1>
 
     <div class="form-container">
-        <form action="<?= site_url('usuario/registro') ?>" method="POST">
+        <form action="<?= site_url('/auth/registro') ?>" method="POST">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required>
+
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" required>
 
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required>
@@ -40,5 +43,4 @@
         </form>
     </div>
 
-</body>
-</html>
+
