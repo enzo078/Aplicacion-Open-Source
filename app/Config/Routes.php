@@ -11,3 +11,5 @@ $routes->get('auth/registro', 'AuthController::registro');
 $routes->post('auth/registro', 'AuthController::guardar');
 $routes->get('auth/login', 'AuthController::mostrarLogin');
 $routes->post('auth/login', 'AuthController::login');
+$routes->get('tareas/crearTarea', 'TareaController::crearTarea');
+$routes->post('tareas/create', 'TareaController::create');

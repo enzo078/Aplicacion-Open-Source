@@ -43,4 +43,4 @@
         </form>
     </div>
 
-<?= view('layouts/footer') ?>
+

@@ -6,7 +6,7 @@
     </div>
 <?php endif; ?>
 
-<form action="<?= base_url('/auth/login') ?>" method="post">
+<form action="<?= site_url('/auth/login') ?>" method="post">
     <div>
         <label for="email">Correo o Nombre de Usuario</label>
         <input type="text" name="email" id="email" required>
@@ -21,4 +21,3 @@
 
 </form>
 
-<?= view('layouts/footer') ?>
