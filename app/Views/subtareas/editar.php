@@ -1,6 +1,5 @@
 <?= view('layouts/header') ?>
 
-<?= $this->section('content') ?>
 <h1>Editar Subtarea</h1>
 
 <form action="<?= site_url('subtareas/update/' . $subtarea['id']) ?>" method="post">
