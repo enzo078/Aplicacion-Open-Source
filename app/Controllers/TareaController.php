@@ -65,7 +65,7 @@ public function editar($id)
         return redirect()->to('/tareas')->with('error', 'Tarea no encontrada.');
     }
 
-    return view('editar_tarea', ['tarea' => $tarea]);
+    return view('editarTarea', ['tarea' => $tarea]);
 }
 
 //Actualizar tarea
