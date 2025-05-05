@@ -19,4 +19,4 @@
 
 <a href="<?= site_url('subtareas/create') ?>">Crear Subtarea</a>
 
-<?= $this->endSection() ?>
+<?= view('layouts/footer') ?>
