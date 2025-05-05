@@ -43,7 +43,7 @@ class AuthController extends BaseController
 
         // Insertar usuario en la base de datos
         if ($this->usuarioModel->insert($data)) {
-            return redirect()->to('/login')->with('message', 'Usuario registrado con éxito. Inicia sesión.');
+            return redirect()->to('auth/login')->with('message', 'Usuario registrado con éxito. Inicia sesión.');
         }
 
         return redirect()->to('/auth/registro')->with('error', 'Hubo un problema al registrar el usuario.');
@@ -73,11 +73,12 @@ class AuthController extends BaseController
         }
         // Iniciar sesión
         $session = session();
-        $session->set('usuario_id', $usuario['id']);
+        $session->set('id', $usuario['id']);
         $session->set('nombre', $usuario['nombre']);
         $session->set('username', $usuario['username']);
         $session->set('email', $usuario['email']);
         $session->set('rol', $usuario['rol']);
+        $session->set('loggedIn', true);
         return redirect()->to('/')->with('message', 'Bienvenido, ' . $usuario['nombre'] . '!');
     }
 
@@ -86,6 +87,6 @@ class AuthController extends BaseController
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/index')->with('message', 'Has cerrado sesión con éxito.');
+        return redirect()->to('/')->with('message', 'Has cerrado sesión con éxito.');
     }
 }

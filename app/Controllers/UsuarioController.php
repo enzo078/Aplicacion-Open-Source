@@ -84,4 +84,13 @@ class UsuarioController extends BaseController
         }
         return $this->fail('Error al eliminar el usuario');
     }
+
+    public function perfil()
+    {
+    $id = session()->get('id'); // o donde tengas almacenado el ID del usuario logueado
+    $usuario = $this->usuarioModel->find($id);
+
+    return view('perfil', ['usuario' => $usuario]);
+    }
+
 }

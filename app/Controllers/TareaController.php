@@ -17,15 +17,14 @@ class TareaController extends BaseController{
     //Obtener todas las tareas
     public function index()
     {
-        $tareas = $this->tareaModel->findAll();
+        $session = session();
+        $tareaModel = new TareaModel();
 
-        $subtareaModel = new SubtareaModel();
-
-        foreach ($tareas as &$tarea) {
-            $tarea['subtareas'] = $subtareaModel->where('tarea_id', $tarea['id'])->findAll();
-        }
-        // Pasamos las tareas (con subtareas) a la vista
-        return view('tareas/index', ['tareas' => $tareas]);
+        // Obtener las tareas del usuario actual
+        $tareas = $tareaModel->getTareasByUserId($session->get('usuario_id')); // Asumiendo que tienes un método para obtener tareas por usuario
+        
+        // Pasar las tareas a la vista
+        return view('tareas/listaTareas', ['tareas' => $tareas]);
     }
 
     //Obtener una tarea por id

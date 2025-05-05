@@ -38,6 +38,10 @@ class TareaModel extends Model
         ],
     ];
     
+    public function getTareasByUserId($usuarioId)
+    {
+        return $this->where('id', $usuarioId)->findAll();
+    }
 
 }
 

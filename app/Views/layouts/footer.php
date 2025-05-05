@@ -35,7 +35,6 @@ h4 {
  font-family:Rubik,sans-serif;
  margin:0;
  font-weight:400;
- padding:0;
  color:#363940
 }
 a {
@@ -44,31 +43,12 @@ a {
 .no-padding {
  padding:0!important
 }
-.go_top {
- line-height:40px;
- cursor:pointer;
- width:40px;
- background:#5867dd;
- color:#fff;
- position:fixed;
- -webkit-box-shadow:0 4px 4px rgba(0,0,0,.1);
- box-shadow:0 4px 4px rgba(0,0,0,.1);
- -webkit-border-radius:50%;
- border-radius:50%;
- right:-webkit-calc((100% - 1140px)/ 2);
- right:calc((100% - 1140px)/ 2);
- z-index:111;
- bottom:80px;
- text-align:center
-}
-.go_top span {
- display:inline-block
-}
+
 .footer-big {
- padding:105px 0 65px 0
+ padding:5px 0 5px 0
 }
 .footer-big .footer-widget {
- margin-bottom:40px
+ margin-bottom:25px
 }
 .footer--light {
  background:#e7e8ed
@@ -100,7 +80,7 @@ a {
 .mini-footer {
  background:#192027;
  text-align:center;
- padding:32px 0
+ padding:px 0
 }
 .mini-footer p {
  margin:0;
@@ -113,10 +93,6 @@ a {
 }
 .mini-footer p a:hover {
  color:#34bfa3
-}
-.widget-about img {
- display:block;
- margin-bottom:30px
 }
 .widget-about p {
  font-weight:400
@@ -141,154 +117,88 @@ a {
   padding-left:0
  }
 }
+
+i{
+  
+}
+
 </style>
 
 <footer class="footer-area footer--light">
   <div class="footer-big">
-    <!-- start .container -->
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-12">
+      <div class="row justify-content-between">
+        <div class="col-md-4 col-sm-12">
           <div class="footer-widget">
             <div class="widget-about">
               <img src="http://placehold.it/250x80" alt="" class="img-fluid">
-              <p> </p>
               <ul class="contact-details">
                 <li>
-                  <span class="icon-earphones"></span> Call Us:
-                  <a href="tel:344-755-111">344-755-111</a>
+                  <span class="icon-earphones"></span> Contactate:
                 </li>
                 <li>
                   <span class="icon-envelope-open"></span>
-                  <a href="mailto:support@aazztech.com">support@aazztech.com</a>
+                  <a href="mailto:enzorodriguez.078@gmail.com">enzorodriguez.078@gmail.com</a>
                 </li>
               </ul>
             </div>
           </div>
-          <!-- Ends: .footer-widget -->
         </div>
-        <!-- end /.col-md-4 -->
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu footer-menu--1">
-              <h4 class="footer-widget-title">Popular Category</h4>
-              <ul>
-                <li>
-                  <a href="#">Wordpress</a>
-                </li>
-                <li>
-                  <a href="#">Plugins</a>
-                </li>
-                <li>
-                  <a href="#">Joomla Template</a>
-                </li>
-                <li>
-                  <a href="#">Admin Template</a>
-                </li>
-                <li>
-                  <a href="#">HTML Template</a>
-                </li>
-              </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- end /.col-md-3 -->
 
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu">
-              <h4 class="footer-widget-title">Our Company</h4>
-              <ul>
+  <div class="col-md-4 offset-md-2 col-sm-12">
+    <div class="footer-widget text-md-center">
+      <div class="footer-menu footer-menu--1">
+      <div class="footer-widget">
+            <div class="widget-about">
+              <ul class="contact-details">
                 <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">How It Works</a>
-                </li>
-                <li>
-                  <a href="#">Affiliates</a>
-                </li>
-                <li>
-                  <a href="#">Testimonials</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-                <li>
-                  <a href="#">Plan &amp; Pricing</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
+                  <span class="icon-earphones"></span> Contactate:
                 </li>
               </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- end /.col-lg-3 -->
-
-        <div class="col-md-3 col-sm-4">
-          <div class="footer-widget">
-            <div class="footer-menu no-padding">
-              <h4 class="footer-widget-title">Help Support</h4>
-              <ul>
-                <li>
-                  <a href="#">Support Forum</a>
-                </li>
-                <li>
-                  <a href="#">Terms &amp; Conditions</a>
-                </li>
-                <li>
-                  <a href="#">Support Policy</a>
-                </li>
-                <li>
-                  <a href="#">Refund Policy</a>
-                </li>
-                <li>
-                  <a href="#">FAQs</a>
-                </li>
-                <li>
-                  <a href="#">Buyers Faq</a>
-                </li>
-                <li>
-                  <a href="#">Sellers Faq</a>
-                </li>
-              </ul>
-            </div>
-            <!-- end /.footer-menu -->
-          </div>
-          <!-- Ends: .footer-widget -->
-        </div>
-        <!-- Ends: .col-lg-3 -->
-
       </div>
-      <!-- end /.row -->
+        <ul class="d-flex justify-content-md-center gap-3 mt-3">
+        <span class="icon-envelope-open"></span>
+          <li>
+            <a href="https://www.instagram.com/enzo.mrdz/" target="_blank">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/EnzooRodriguez_" target="_blank">
+              <i class="fab fa-x-twitter fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/enzo.rodriguez.3910" target="_blank">
+              <i class="fab fa-facebook fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- end /.container -->
+</div>
+
+        
+      </div>
+    </div>
   </div>
-  <!-- end /.footer-big -->
 
   <div class="mini-footer">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="copyright-text">
-            <p>© 2018
-              <a href="#">DigiPro</a>. All rights reserved. Created by
-              <a href="#">AazzTech</a>
+            <p>© 2025
+              <a href="#">enzopro</a>. All rights reserved. Created by
+              <a href="#">enzopro</a>
             </p>
-          </div>
-
-          <div class="go_top">
-            <span class="icon-arrow-up"></span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
