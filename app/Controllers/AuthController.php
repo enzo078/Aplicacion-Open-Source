@@ -12,42 +12,87 @@ class AuthController extends BaseController
 
     public function __construct()
     {
-        $this->usuarioModel = new UsuarioModel(); // Cargar el modelo
+        $this->usuarioModel = new UsuarioModel(); 
     }
 
-    // Mostrar el formulario de registro
     public function registro()
     {
         return view('auth/registro');
     }
 
-    // Procesar el registro
-    public function guardar()
-    {
-        $data = $this->request->getPost();
-
-        // Verificar que el email no esté registrado
-        $emailExistente = $this->usuarioModel->where('email', $data['email'])->first();
-        if ($emailExistente) {
-            return redirect()->to('/auth/registro')->with('error', 'El correo electrónico ya está registrado.');
-        }
-        
-        // Verificar que el usuario no este registrado
-        $userNameExistente = $this->usuarioModel->where('username', $data['username'])->first();
-        if ($userNameExistente) {
-            return redirect()->to('/auth/registro')->with('error', 'El nombre de usuario ya está  registrado');
-        }
-        
-        // Hash de la contraseña
-        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
-        // Insertar usuario en la base de datos
-        if ($this->usuarioModel->insert($data)) {
-            return redirect()->to('auth/login')->with('message', 'Usuario registrado con éxito. Inicia sesión.');
-        }
-
-        return redirect()->to('/auth/registro')->with('error', 'Hubo un problema al registrar el usuario.');
+   public function guardar()
+{
+    if (!$this->request->is('post')) {
+        return redirect()->to('/auth/registro');
     }
+
+    $data = $this->request->getPost();
+    $data['es_admin'] = 0;
+
+    $rules = [
+        'nombre' => [
+            'rules' => 'required|min_length[3]|max_length[100]',
+            'errors' => [
+                'required' => 'El nombre completo es obligatorio',
+                'min_length' => 'El nombre debe tener al menos 3 caracteres',
+                'max_length' => 'El nombre no puede exceder los 100 caracteres'
+            ]
+        ],
+        'username' => [
+            'rules' => 'required|min_length[3]|max_length[20]|is_unique[usuarios.username]',
+            'errors' => [
+                'required' => 'El nombre de usuario es obligatorio',
+                'min_length' => 'El usuario debe tener al menos 3 caracteres',
+                'max_length' => 'El usuario no puede exceder los 20 caracteres',
+                'is_unique' => 'Este nombre de usuario ya está en uso'
+            ]
+        ],
+        'email' => [
+            'rules' => 'required|valid_email|is_unique[usuarios.email]',
+            'errors' => [
+                'required' => 'El correo electrónico es obligatorio',
+                'valid_email' => 'Debe ingresar un correo electrónico válido',
+                'is_unique' => 'Este correo ya está registrado'
+            ]
+        ],
+        'password' => [
+            'rules' => 'required|min_length[8]',
+            'errors' => [
+                'required' => 'La contraseña es obligatoria',
+                'min_length' => 'La contraseña debe tener al menos 8 caracteres'
+            ]
+        ]
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+
+    $userData = [
+        'nombre' => $data['nombre'],
+        'username' => $data['username'],
+        'email' => $data['email'],
+        'password' => password_hash($data['password'], PASSWORD_DEFAULT),
+        'rol' => 'usuario',
+        'es_admin' => 0
+    ];
+
+    try {
+        $id = $this->usuarioModel->insert($userData);
+        
+        if (!$id) {
+            throw new \RuntimeException('No se pudo obtener el ID del usuario registrado');
+        }
+
+        return redirect()->to('/auth/login')->with('message', '¡Registro exitoso! Por favor inicia sesión.');
+
+    } catch (\Exception $e) {
+        log_message('error', 'Error en registro: ' . $e->getMessage());
+        return redirect()->back()
+            ->withInput()
+            ->with('error', 'Ocurrió un error al registrar. Por favor inténtalo nuevamente.');
+    }
+}
 
     public function mostrarLogin()
     {
@@ -58,19 +103,21 @@ class AuthController extends BaseController
     {
         $data = $this->request->getPost();
 
-        // Verificar si el usuario existe
-        if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            $usuario = $this->usuarioModel->where('email', $data['email'])->first();
-        } else {
-            $usuario = $this->usuarioModel->where('username', $data['email'])->first();
-        }
-        if (!$usuario) {
-            return redirect()->to('/auth/login')->with('error', 'El correo electrónico o nombre de usuario no está registrado.');
-        }
-        // Verificar la contraseña
-        if (!password_verify($data['password'], $usuario['password'])) {
-            return redirect()->to('/auth/login')->with('error', 'Contraseña incorrecta.');
-        }
+    $usuario = $this->usuarioModel->where('email', $data['email'])
+                        ->orWhere('username', $data['email'])
+                        ->first();
+
+    if (!$usuario) {
+        return redirect()->to('/auth/login')->with('error', 'Credenciales incorrectas');
+    }
+
+    log_message('debug', 'Stored hash: '.$usuario['password']);
+    log_message('debug', 'Input password: '.$data['password']);
+
+    if (!password_verify($data['password'], $usuario['password'])) {
+        log_message('debug', 'Password verification failed');
+        return redirect()->to('/auth/login')->with('error', 'Contraseña incorrecta');
+    }
         // Iniciar sesión
         $session = session();
         $session->set('id', $usuario['id']);
@@ -89,4 +136,7 @@ class AuthController extends BaseController
         $session->destroy();
         return redirect()->to('/')->with('message', 'Has cerrado sesión con éxito.');
     }
+
+
 }
+

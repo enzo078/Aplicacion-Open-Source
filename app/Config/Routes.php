@@ -23,3 +23,10 @@ $routes->post('subtarea/actualizar/(:num)', 'SubTareaController::update/$1');
 $routes->get('subtarea/eliminar/(:num)', 'SubTareaController::delete/$1'); 
 $routes->get('/perfil', 'PerfilController::perfil');
 $routes->post('/usuarios/update/(:num)', 'UsuarioController::update/$1');
+$routes->get('/dashboard', 'DashboardController::index'); 
+$routes->get('/tareas/editar/(:num)', 'DashboardController::editarTarea/$1');
+$routes->post('tareas/eliminar', 'TareaController::eliminar');
+$routes->post('tareas/archivar', 'TareaController::archivar');
+$routes->get('tareas/ver/(:num)', 'TareaController::ver/$1');
+
+$routes->get('test-register', 'AuthController::testRegister');

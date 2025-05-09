@@ -11,10 +11,13 @@ class SubTareaController extends BaseController
 {
     protected $usuarioModel;
     protected $subTareaModel;
+    protected $tareaModel;
 
     public function __construct()
     {
         $this->subTareaModel = new SubtareaModel();
+        $this->tareaModel = new TareaModel();
+        $this->usuarioModel = new UsuarioModel();
     }
 
     public function index()
@@ -23,34 +26,30 @@ class SubTareaController extends BaseController
         return view('subtareas/listaSubtareas', ['subtareas' => $subtareas]);
     }
 
-
     public function create($tareaId)
-{
-    $tarea = $this->tareaModel->find($tareaId);
-    
-    if (!$tarea) {
-        return redirect()->to('/tareas')->with('error', 'Tarea no encontrada');
-    }
-
-    $usuarioId = session()->get('id');
-    $rol = session()->get('rol');
-
-    if ($tarea['archivada'] || $tarea['estado'] === 'Completada') {
-        if ($usuarioId != $tarea['id_usuario'] && $rol != 'admin') {
-            return redirect()->to('/tareas')->with('error', 'No puedes crear subtareas en tareas archivadas o completadas');
+    {
+        $tarea = $this->tareaModel->find($tareaId);
+        
+        if (!$tarea) {
+            return redirect()->to('/tareas')->with('error', 'Tarea no encontrada');
         }
+
+        $usuarioId = session()->get('id');
+        $rol = session()->get('rol');
+
+        if ($tarea['archivada'] || $tarea['estado'] === 'Completada') {
+            if ($usuarioId != $tarea['id_usuario'] && $rol != 'admin') {
+                return redirect()->to('/tareas')->with('error', 'No puedes crear subtareas en tareas archivadas o completadas');
+            }
+        }
+
+        $responsables = $this->usuarioModel->findAll();
+
+        return view('tareas/crearSubtarea', [
+            'tarea' => $tarea,
+            'responsables' => $responsables
+        ]);
     }
-
-    // Cargamos todos los usuarios como posibles responsables
-    $responsables = $this->usuarioModel->findAll(); // Si querés filtrar por rol, podés hacerlo aquí
-
-    return view('tareas/crearSubtarea', [
-        'tarea' => $tarea,
-        'responsables' => $responsables
-    ]);
-}
-
-
 
     public function edit($id)
     {
@@ -71,7 +70,7 @@ class SubTareaController extends BaseController
             return redirect()->back()->with('error', 'Subtarea no encontrada');
         }
 
-        $tarea = $this->tareaModel->find($subtarea['tarea_id']);
+        $tarea = $this->tareaModel->find($subtarea['id_tarea']); // Cambiado a id_tarea
         $usuarioId = session()->get('id');
         $rol = session()->get('rol');
 
@@ -85,8 +84,8 @@ class SubTareaController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->subTareaModel->errors());
         }
 
-        $this->actualizarEstadoTarea($subtarea['tarea_id']);
-        return redirect()->to('/tareas/' . $subtarea['tarea_id'])->with('success', 'Subtarea actualizada');
+        $this->actualizarEstadoTarea($subtarea['id_tarea']); // Cambiado a id_tarea
+        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea actualizada'); // Cambiado a id_tarea
     }
 
     public function delete($id = null)
@@ -96,7 +95,7 @@ class SubTareaController extends BaseController
             return redirect()->back()->with('error', 'Subtarea no encontrada');
         }
 
-        $tarea = $this->tareaModel->find($subtarea['tarea_id']);
+        $tarea = $this->tareaModel->find($subtarea['id_tarea']); // Cambiado a id_tarea
         $usuarioId = session()->get('id');
 
         if ($usuarioId != $tarea['id_usuario']) {
@@ -104,13 +103,13 @@ class SubTareaController extends BaseController
         }
 
         $this->subTareaModel->delete($id);
-        $this->actualizarEstadoTarea($subtarea['tarea_id']);
-        return redirect()->to('/tareas/' . $subtarea['tarea_id'])->with('success', 'Subtarea eliminada');
+        $this->actualizarEstadoTarea($subtarea['id_tarea']); // Cambiado a id_tarea
+        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea eliminada'); // Cambiado a id_tarea
     }
 
     protected function actualizarEstadoTarea($tareaId)
     {
-        $subtareas = $this->subTareaModel->where('tarea_id', $tareaId)->findAll();
+        $subtareas = $this->subTareaModel->where('id_tarea', $tareaId)->findAll(); // Cambiado a id_tarea
         $total = count($subtareas);
         $completadas = count(array_filter($subtareas, fn($s) => $s['estado'] === 'Completada'));
 

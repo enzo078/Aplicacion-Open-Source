@@ -1,46 +1,60 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro de Usuario</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .form-container { width: 300px; margin: 0 auto; }
-        label { font-weight: bold; }
-        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 50%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;}
-        button:hover { background-color: #45a049; }
-    </style>
-</head>
-<body>
+<?= view('layouts/header') ?>
 
-    <h1>Registro de Usuario</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="card-title text-center mb-4">Registro de Usuario</h2>
+                    
+                    <?php if (session()->getFlashdata('error')): ?>
+                        <div class="alert alert-danger alert-dismissible fade show">
+                            <?= session()->getFlashdata('error') ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
 
-    <div class="form-container">
-        <form action="<?= site_url('/auth/registro') ?>" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+                    <?php if (session()->getFlashdata('message')): ?>
+                        <div class="alert alert-success alert-dismissible fade show">
+                            <?= session()->getFlashdata('message') ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+                    <form action="<?= site_url('auth/registro') ?>" method="post">
+                        <?= csrf_field() ?>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre y apellido</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" required>
+                        </div>
 
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" name="username" required>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" name="email" id="email" required>
+                        </div>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" name="username" id="username" required>
+                        </div>
 
-            <button type="submit">Registrar</button>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" name="password" id="password" required>
+                        </div>
 
-            <?php if (session()->getFlashdata('error')): ?>
-                <div style="color: red;"><?= session()->getFlashdata('error') ?></div>
-            <?php endif; ?>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </div>
+                    </form>
 
-            <?php if (session()->getFlashdata('message')): ?>
-                <div style="color: green;"><?= session()->getFlashdata('message') ?></div>
-            <?php endif; ?>
-
-        </form>
+                    <div class="text-center mt-3">
+                        <p>¿Ya tienes una cuenta? <a href="<?= site_url('auth/login') ?>">Inicia sesión aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
+</div>
 

@@ -9,7 +9,7 @@
 </style>
 <main>
 <h1>Listado de Tareas</h1>
-<?php if ($session->get('logged_in')): ?>
+<?php if ($session->get('loggedIn')): ?>
     <p>Bienvenido, <?= esc($session->get('username')) ?> <br>Estas son tus tareas</p>
     <?php foreach ($tareas as $tarea): ?>
         <div class="tarea">

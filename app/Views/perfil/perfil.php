@@ -28,7 +28,7 @@
             cursor: pointer;
         }
     </style>
-<?php if ($session->get('logged_in')): ?>
+<?php if ($session->get('loggedIn')): ?>
     <h2 style="text-align:center;">Mi Perfil</h2>
     <form action="<?= site_url('usuario/update' . $usuario['id']) ?>" method="post">
         <label for="nombre">Nombre</label>

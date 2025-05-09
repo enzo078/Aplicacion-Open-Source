@@ -9,16 +9,17 @@ class TareaModel extends Model
     protected $table = 'tareas';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'asunto', 'descripcion', 'prioridad', 'estado',
-        'fecha_vencimiento', 'fecha_recordatorio', 'color', 'archivada'
+        'id_usuario', 'asunto', 'descripcion', 'prioridad', 'estado',
+        'fecha_vencimiento', 'fecha_recordatorio', 'color', 'archivada',
     ];
     protected $useTimestamps = true;
 
     protected $validationRules = [
+        'id_usuario' => 'required|is_not_unique[usuarios.id]',
         'asunto' => 'required|min_length[3]',
         'descripcion' => 'required',
         'fecha_vencimiento' => 'required|valid_date[Y-m-d]',
-        'fecha_recordatorio' => 'permit_empty|valid_date[Y-m-d]', // Opcional
+        'fecha_recordatorio' => 'permit_empty|valid_date[Y-m-d]',
     ];
 
     protected $validationMessages = [
@@ -41,6 +42,12 @@ class TareaModel extends Model
     public function getTareasByUserId($usuarioId)
     {
         return $this->where('id', $usuarioId)->findAll();
+    }
+
+    public function puedeEditarTarea($tareaId, $usuarioId) {
+        $tarea = $this->find($tareaId);
+    
+        return ($tarea['id_usuario'] == $usuarioId) || (session()->get('rol') == 'admin');
     }
 
 }
