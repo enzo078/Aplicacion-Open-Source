@@ -47,7 +47,7 @@ class TareaController extends BaseController
     }
 
     $data['id_usuario'] = $userId;
-    $data['estado'] = 'Pendiente'; 
+    $data['estado'] = 'Definida'; 
 
     $rules = [
         'asunto' => 'required|min_length[3]',
@@ -74,49 +74,48 @@ class TareaController extends BaseController
         return $this->respond($tarea);
     }
 
-
-    public function editar($id)
-    {
-        $tarea = $this->tareaModel->where('id', $id)
-                                ->where('id_usuario', session()->get('id'))
-                                ->first();
-
-        if (!$tarea && !session()->get('es_admin')) {
-            return redirect()->to('/tareas')->with('error', 'Tarea no encontrada o no tienes permiso.');
-        }
-        return view('tareas/editarTarea', [
-            'tarea' => $tarea,
-            'prioridades' => ['Baja', 'Normal', 'Alta'] 
-        ]);
+    public function update($id = null)
+{
+    if (!$this->request->is('post')) {
+        return redirect()->back()->with('error', 'Método no permitido');
     }
 
-    public function actualizar($id)
-    {
-        $tarea = $this->tareaModel->where('id', $id)
-                                ->where('id_usuario', session()->get('id'))
-                                ->first();
+    $tarea = $this->tareaModel->where('id', $id)
+                             ->where('id_usuario', session()->get('id'))
+                             ->first();
 
-        if (!$tarea) {
-            return redirect()->to('/dashboard')->with('error', 'No tienes permiso');
-        }
-
-        $rules = [
-            'asunto' => 'required|min_length[3]|max_length[150]',
-            'prioridad' => 'required|in_list[Baja,Normal,Alta]',
-            'fecha_vencimiento' => 'permit_empty|valid_date'
-        ];
-
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-
-        try {
-            $this->tareaModel->update($id, $this->request->getPost());
-            return redirect()->to('/dashboard')->with('success', 'Tarea actualizada');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error al actualizar: ' . $e->getMessage());
-        }
+    if (!$tarea) {
+        return redirect()->back()->with('error', 'No tienes permiso para editar esta tarea');
     }
+
+    $rules = [
+        'asunto' => 'required|min_length[3]|max_length[150]',
+        'descripcion' => 'permit_empty|string',
+        'prioridad' => 'required|in_list[Baja,Normal,Alta]',
+        'fecha_vencimiento' => 'required|valid_date',
+        'fecha_recordatorio' => 'permit_empty|valid_date'
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+
+    $data = [
+        'asunto' => $this->request->getPost('asunto'),
+        'descripcion' => $this->request->getPost('descripcion'),
+        'prioridad' => $this->request->getPost('prioridad'),
+        'fecha_vencimiento' => $this->request->getPost('fecha_vencimiento'),
+        'fecha_recordatorio' => $this->request->getPost('fecha_recordatorio') ?: null, 
+    ];
+
+    try {
+        $this->tareaModel->update($id, $data);
+        return redirect()->to('/tareas/ver/'.$id)->with('success', 'Tarea actualizada correctamente');
+    } catch (\Exception $e) {
+        log_message('error', 'Error al actualizar tarea: ' . $e->getMessage());
+        return redirect()->back()->withInput()->with('error', 'Ocurrió un error al actualizar la tarea');
+    }
+}
 
     public function eliminar()
 {
@@ -181,6 +180,12 @@ class TareaController extends BaseController
 
     public function ver($id)
 {
+    $subtareas = $this->subTareaModel
+        ->select('subtareas.*, usuarios.username as responsable_nombre')
+        ->join('usuarios', 'usuarios.id = subtareas.id_responsable', 'left')
+        ->where('subtareas.id_tarea', $id)
+        ->orderBy('subtareas.created_at', 'DESC')
+        ->findAll();
     $tareaModel = model('TareaModel');
     $subTareaModel = model('SubtareaModel');
     
@@ -208,5 +213,10 @@ class TareaController extends BaseController
     ]);
 }
 
+public function puedeEditarTarea($id_tarea, $id_usuario)
+{
+    $tarea = $this->find($id_tarea);
+    return $tarea && $tarea['id_usuario'] == $id_usuario;
+}
 
 }

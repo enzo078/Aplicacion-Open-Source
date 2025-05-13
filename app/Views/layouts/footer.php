@@ -1,10 +1,13 @@
 <style>
     @import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700);
+
+
+
 body {
  font-family:Rubik,sans-serif;
  position:relative;
  font-weight:400;
- font-size:15px
+ font-size:15px;
 }
 ul {
  padding:0;
@@ -45,7 +48,8 @@ a {
 }
 
 .footer-big {
- padding:5px 0 5px 0
+ padding:5px 0 5px 0;
+ background-color:#f8f9fa;
 }
 .footer-big .footer-widget {
  margin-bottom:25px
@@ -152,7 +156,7 @@ i{
             <div class="widget-about">
               <ul class="contact-details">
                 <li>
-                  <span class="icon-earphones"></span> Contactate:
+                  <span class="icon-earphones"></span> Conectate:
                 </li>
               </ul>
       </div>

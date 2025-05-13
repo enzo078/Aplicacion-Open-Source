@@ -134,10 +134,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <h5 class="card-title mb-0"><?= esc($tarea['asunto']) ?></h5>
-                        <span class="badge status-badge bg-<?= 
-                            $tarea['estado'] === 'Completada' ? 'success' : 
-                            ($tarea['estado'] === 'En Proceso' ? 'warning' : 'info')
-                        ?>">
+                        <span class="badge status-badge bg-secondary">
                             <?= esc($tarea['estado']) ?>
                         </span>
                     </div>
@@ -146,7 +143,6 @@
                         <?= esc($tarea['descripcion']) ?>
                     </p>
                     
-                   <!-- Etiqueta de prioridad POSICIONADA -->
                     <?php
                         $priorityClass = match(strtolower($tarea['prioridad'])) {
                             'alta' => 'priority-high',
@@ -176,16 +172,7 @@
                                 <i class="fas fa-tasks me-1"></i>Subtareas (<?= count($tarea['subtareas']) ?>)
                             </h6>
                             <ul class="list-group list-group-flush small">
-                                <?php foreach ($tarea['subtareas'] as $subtarea): ?>
-                                    <li class="list-group-item py-2 d-flex justify-content-between align-items-center">
-                                        <?= esc($subtarea['descripcion']) ?>
-                                        <span class="badge bg-<?= 
-                                            $subtarea['estado'] === 'Completada' ? 'success' : 
-                                            ($subtarea['estado'] === 'En Proceso' ? 'warning' : 'secondary')
-                                        ?>">
-                                            <?= esc($subtarea['estado']) ?>
-                                        </span>
-                                    </li>
+                                <?php foreach ($tarea['subtareas'] as $subtarea): ?>                         
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -201,17 +188,20 @@
                         <a href="<?= site_url('tareas/ver/' . $tarea['id']) ?>" class="btn btn-sm btn-outline-primary me-2" title="Ver detalles">
                             <i class="fas fa-eye"></i>
                         </a>
-                        <form action="<?= base_url('tareas/eliminar') ?>" method="post">
-                            <input type="hidden" name="id" value="<?= $tarea['id'] ?>">
-                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        <form action="<?= base_url('tareas/archivar') ?>" method="post">
-                            <input type="hidden" name="id" value="<?= $tarea['id'] ?>">
-                            <button type="submit" class="btn btn-sm btn-outline-dark" title="Archivar">
-                                <i class="fas fa-archive"></i>
-                            </button>
-                        </form>
+                       <!-- Formulario para eliminar -->
+                    <form action="<?= base_url('tareas/eliminar') ?>" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="<?= $tarea['id'] ?>">
+                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                    <!-- Formulario para archivar -->
+                    <form action="<?= site_url('tareas/archivar') ?>" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="<?= $tarea['id'] ?>">
+                        <button type="submit" class="btn btn-sm btn-outline-dark" title="Archivar">
+                            <i class="fas fa-archive"></i>
+                        </button>
+                    </form>
                     <?php endif; ?>
                 </div>
 </div>
@@ -226,7 +216,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Tooltips para los botones
         document.addEventListener('DOMContentLoaded', function() {
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
             tooltipTriggerList.map(function (tooltipTriggerEl) {

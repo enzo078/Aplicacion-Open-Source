@@ -15,7 +15,7 @@ class SubTareaController extends BaseController
 
     public function __construct()
     {
-        $this->subTareaModel = new SubtareaModel();
+        $this->subTareaModel = new SubTareaModel();
         $this->tareaModel = new TareaModel();
         $this->usuarioModel = new UsuarioModel();
     }
@@ -26,40 +26,73 @@ class SubTareaController extends BaseController
         return view('subtareas/listaSubtareas', ['subtareas' => $subtareas]);
     }
 
-    public function create($tareaId)
-    {
+public function crear()
+{
+    $tareaId = $this->request->getPost('id_tarea');
+
+    log_message('info', 'Datos recibidos: ' . json_encode($this->request->getPost()));
+
+    $rules = [
+        'id_tarea' => 'required|is_not_unique[tareas.id]',
+        'asunto' => 'required|max_length[150]',
+        'descripcion' => 'required',
+        'prioridad' => 'required|in_list[Baja,Normal,Alta]',
+        'id_responsable' => 'permit_empty|is_not_unique[usuarios.id]',
+        'asignado_es_admin' => 'permit_empty|in_list[0,1]',
+        'fecha_vencimiento' => 'permit_empty|valid_date'
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+
+    try {
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        $dataSubtarea = [
+            'id_tarea' => $tareaId,
+            'asunto' => $this->request->getPost('asunto') ?: null,
+            'descripcion' => $this->request->getPost('descripcion'),
+            'prioridad' => $this->request->getPost('prioridad'),
+            'id_responsable' => $this->request->getPost('id_responsable') ?: null,
+            'asignado_es_admin' => $this->request->getPost('asignado_es_admin') ? 1 : 0,
+            'estado' => 'Definido',
+            'fecha_vencimiento' => $this->request->getPost('fecha_vencimiento') ?: null
+        ];
+
+        log_message('info', 'Datos a insertar: ' . json_encode($dataSubtarea));
+
+        if (!$this->subTareaModel->insert($dataSubtarea)) {
+            throw new \RuntimeException('Error al insertar: ' . implode(', ', $this->subTareaModel->errors()));
+        }
+
         $tarea = $this->tareaModel->find($tareaId);
+        if ($tarea['estado'] === 'Pendiente') {
+            $this->tareaModel->update($tareaId, ['estado' => 'En proceso']);
+        }
+
+        $db->transComplete();
+
+        return redirect()->to("/tareas/ver/{$tareaId}")->with('message', 'Subtarea creada exitosamente');
+
+    } catch (\Exception $e) {
+        isset($db) && $db->transRollback();
+        log_message('error', 'Error en crear(): ' . $e->getMessage());
+        return redirect()->back()->withInput()->with('error', $e->getMessage());
+    }
+}
+
+
+    public function editar($subtareaId)
+{
+    $subtarea = $this->subTareaModel
+        ->select('subtareas.*, usuarios.username as responsable_nombre, usuarios.id as responsable_id')
+        ->join('usuarios', 'usuarios.id = subtareas.id_responsable', 'left')
+        ->find($subtareaId);
         
-        if (!$tarea) {
-            return redirect()->to('/tareas')->with('error', 'Tarea no encontrada');
-        }
-
-        $usuarioId = session()->get('id');
-        $rol = session()->get('rol');
-
-        if ($tarea['archivada'] || $tarea['estado'] === 'Completada') {
-            if ($usuarioId != $tarea['id_usuario'] && $rol != 'admin') {
-                return redirect()->to('/tareas')->with('error', 'No puedes crear subtareas en tareas archivadas o completadas');
-            }
-        }
-
-        $responsables = $this->usuarioModel->findAll();
-
-        return view('tareas/crearSubtarea', [
-            'tarea' => $tarea,
-            'responsables' => $responsables
-        ]);
-    }
-
-    public function edit($id)
-    {
-        $subtarea = $this->subTareaModel->find($id);
-        if (!$subtarea) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Subtarea no encontrada');
-        }
-
-        return view('subtareas/editar', ['subtarea' => $subtarea]);
-    }
+    return $this->response->setJSON($subtarea);
+}
 
     public function update($id = null)
     {
@@ -70,7 +103,7 @@ class SubTareaController extends BaseController
             return redirect()->back()->with('error', 'Subtarea no encontrada');
         }
 
-        $tarea = $this->tareaModel->find($subtarea['id_tarea']); // Cambiado a id_tarea
+        $tarea = $this->tareaModel->find($subtarea['id_tarea']);
         $usuarioId = session()->get('id');
         $rol = session()->get('rol');
 
@@ -84,43 +117,68 @@ class SubTareaController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->subTareaModel->errors());
         }
 
-        $this->actualizarEstadoTarea($subtarea['id_tarea']); // Cambiado a id_tarea
-        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea actualizada'); // Cambiado a id_tarea
+        $this->actualizarEstadoTarea($subtarea['id_tarea']); 
+        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea actualizada'); 
     }
 
-    public function delete($id = null)
-    {
-        $subtarea = $this->subTareaModel->find($id);
-        if (!$subtarea) {
-            return redirect()->back()->with('error', 'Subtarea no encontrada');
-        }
+   
+public function cambiarEstado()
+{
+    $validation = \Config\Services::validation();
 
-        $tarea = $this->tareaModel->find($subtarea['id_tarea']); // Cambiado a id_tarea
-        $usuarioId = session()->get('id');
+    if (!$this->validate([
+        'id' => 'required|integer',
+        'estado' => 'required|string'
+    ])) {
+        $mensaje = ['success' => false, 'message' => 'Datos inválidos'];
 
-        if ($usuarioId != $tarea['id_usuario']) {
-            return redirect()->back()->with('error', 'Solo el dueño de la tarea puede eliminar esta subtarea');
-        }
-
-        $this->subTareaModel->delete($id);
-        $this->actualizarEstadoTarea($subtarea['id_tarea']); // Cambiado a id_tarea
-        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea eliminada'); // Cambiado a id_tarea
-    }
-
-    protected function actualizarEstadoTarea($tareaId)
-    {
-        $subtareas = $this->subTareaModel->where('id_tarea', $tareaId)->findAll(); // Cambiado a id_tarea
-        $total = count($subtareas);
-        $completadas = count(array_filter($subtareas, fn($s) => $s['estado'] === 'Completada'));
-
-        if ($total > 0 && $completadas === $total) {
-            $estado = 'Completada';
-        } elseif ($completadas > 0) {
-            $estado = 'En proceso';
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON($mensaje);
         } else {
-            $estado = 'Definida';
+            return redirect()->back()->with('error', $mensaje['message']);
         }
-
-        $this->tareaModel->update($tareaId, ['estado' => $estado]);
     }
+
+    $subtareaId = $this->request->getPost('id');
+    $nuevoEstado = $this->request->getPost('estado');
+
+    $subtarea = $this->subTareaModel->find($subtareaId);
+    if ($subtarea['id_responsable'] != session()->get('id')) {
+        $mensaje = ['success' => false, 'message' => 'No tienes permiso para esta acción'];
+
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON($mensaje);
+        } else {
+            return redirect()->back()->with('error', $mensaje['message']);
+        }
+    }
+
+    $this->subTareaModel->update($subtareaId, ['estado' => $nuevoEstado]);
+    $mensaje = ['success' => true, 'message' => 'Estado actualizado'];
+
+    if ($this->request->isAJAX()) {
+        return $this->response->setJSON($mensaje);
+    } else {
+        return redirect()->back()->with('success', $mensaje['message']);
+    }
+}
+
+public function eliminar()
+{
+    $subtareaId = $this->request->getPost('id');
+    $subtarea = $this->subTareaModel->find($subtareaId);
+
+    if (!$subtarea) {
+        return redirect()->back()->with('error', 'Subtarea no encontrada');
+    }
+
+    if ($subtarea['id_creador'] != session()->get('id')) {
+        return redirect()->back()->with('error', 'No tienes permiso para esta acción');
+    }
+
+    $this->subTareaModel->delete($subtareaId);
+    return redirect()->back()->with('success', 'Subtarea eliminada correctamente');
+}
+
+
 }

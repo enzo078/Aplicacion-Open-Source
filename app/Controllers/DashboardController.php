@@ -23,8 +23,6 @@ class DashboardController extends BaseController
 
     $filter = $this->request->getGet('filter');
     $userId = session()->get('id');
-
-    // Consulta CORREGIDA (usar id_usuario en lugar de id)
     $query = $this->tareaModel->where('id_usuario', $userId);
 
     switch ($filter) {
@@ -69,18 +67,5 @@ class DashboardController extends BaseController
         ]);
     }
 
-    public function editarTarea($id)
-    {
-        $tarea = $this->tareaModel->find($id);
-
-        if ($this->request->getMethod() === 'post') {
-            $data = $this->request->getPost();
-            $this->tareaModel->update($id, $data);
-            return redirect()->to('/dashboard')->with('success', 'Tarea actualizada');
-        }
-
-        return view('tareas/editarTarea', [
-            'tarea' => $tarea
-        ]);
-    }
+    
 }

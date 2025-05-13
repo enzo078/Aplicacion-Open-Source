@@ -8,7 +8,7 @@ class SubtareaModel extends Model{
     protected $table = 'subtareas';
     protected $primaryKey = 'id';
     protected $allowedFields = ['descripcion', 'estado', 'prioridad', 'fecha_vencimiento',
-                                 'asignado_es_admin', 'responsable_id', 'id_tarea', 'color' ];
+                                 'asignado_es_admin', 'id_responsable', 'id_tarea', 'color', 'asunto' ];
     protected $useTimestamps = true;
     
 
@@ -22,4 +22,5 @@ class SubtareaModel extends Model{
         
         return $subtarea['responsable_id'] == $usuarioId && $subtarea['asignado_es_admin'];
     }
+    
 }
