@@ -11,7 +11,6 @@
     margin-top: 5px;
 }
 
-
 .modal-content .priority-high {
     background-color: #ffebee;
     color: #c62828;
@@ -64,7 +63,6 @@
     </div>
 <?php endif; ?>
 
-
 <!-- Tarea -->
 <div class="card mb-4">
     <div class="card-header bg-primary text-white">
@@ -74,7 +72,6 @@
                 <small>Creada por: <?= esc($tarea['usuario_nombre']) ?> • Fecha límite: <?= $tarea['fecha_vencimiento'] ?></small>
             </div>
             <?php 
-            // Solo mostrar botón de edición si es el creador o admin
             $esCreador = $tarea['id_usuario'] == session()->get('id');
             $esAdmin = session()->get('rol') == 'admin';
             if ($esCreador || $esAdmin): ?>
@@ -121,7 +118,7 @@
 </div>
 
 <!-- Modal para editar Tarea -->
- <div class="modal fade" id="editarTareaModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editarTareaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="<?= base_url('tareas/actualizar/'.$tarea['id']) ?>" method="post">
@@ -132,8 +129,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Campos del formulario -->
-                     <div class="mb-3">
+                    <div class="mb-3">
                         <label class="form-label">Asunto</label>
                         <textarea name="asunto" id="edit_asunto" class="form-control" required></textarea>
                     </div>
@@ -166,14 +162,11 @@
     </div>
 </div>
 
-
 <!-- Lista de subtareas -->
 <div class="card mb-4">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h4>Subtareas</h4>
-        <?php 
-        // Solo mostrar botón de nueva subtarea si es creador o admin
-        if ($esCreador || $esAdmin): ?>
+        <?php if ($esCreador || $esAdmin): ?>
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#nuevaSubtareaModal">
                 <i class="fas fa-plus"></i> Nueva Subtarea
             </button>
@@ -211,34 +204,36 @@
                     </div>
                     <div class="btn-group">
                         <?php 
-                        // Determinar permisos para esta subtarea específica
                         $puedeEditarSubtarea = false;
                         if ($esCreador || $esAdmin) {
                             $puedeEditarSubtarea = true;
                         } elseif ($subtarea['id_responsable'] == session()->get('id') && ($subtarea['asignado_es_admin'] ?? 0)) {
                             $puedeEditarSubtarea = true;
                         }
-                        if ($esCreador || $esAdmin): ?>
-                            <button class="btn btn-sm btn-outline-secondary edit-subtask" 
-                                data-bs-toggle="modal" 
+                        
+                        if ($puedeEditarSubtarea): ?>
+                            <button class="btn btn-sm btn-light edit-subtask-btn" title="Editar subtarea"
+                                data-bs-toggle="modal"
                                 data-bs-target="#editarSubtareaModal"
                                 data-id="<?= $subtarea['id'] ?>"
                                 data-asunto="<?= esc($subtarea['asunto']) ?>"
                                 data-descripcion="<?= esc($subtarea['descripcion']) ?>"
                                 data-prioridad="<?= esc($subtarea['prioridad']) ?>"
-                                data-responsable="<?= $subtarea['id_responsable'] ?? '' ?>"
-                                data-admin="<?= $subtarea['asignado_es_admin'] ?? 0 ?>">
-                                <i class="fas fa-edit" title="Editar"></i>
+                                data-estado="<?= esc($subtarea['estado']) ?>"
+                                data-fecha_vencimiento="<?= esc($subtarea['fecha_vencimiento']) ?>"
+                                data-fecha_recordatorio="<?= esc($subtarea['fecha_recordatorio'] ?? '') ?>"
+                                data-id_responsable="<?= esc($subtarea['id_responsable'] ?? '') ?>"
+                                data-asignado_es_admin="<?= esc($subtarea['asignado_es_admin'] ?? 0) ?>">
+                                <i class="fas fa-edit"></i>
                             </button>
                         <?php endif; ?>
                         
-                        <?php 
-                        if ($esCreador || $esAdmin): ?>
-                            <button class="btn btn-sm btn-outline-danger" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#confirmarEliminarModal"
-                                onclick="document.getElementById('subtareaIdEliminar').value = <?= $subtarea['id'] ?>">
-                                <i class="fas fa-trash-alt" title="Eliminar"></i>
+                        <?php if ($esCreador || $esAdmin): ?>
+                            <button class="btn btn-sm btn-outline-danger delete-subtask-btn" title="Eliminar subtarea"
+                                data-bs-toggle="modal"
+                                data-bs-target="#confirmarEliminarSubtareaModal"
+                                data-id="<?= $subtarea['id'] ?>">
+                                <i class="fas fa-trash-alt"></i>
                             </button>
                         <?php endif; ?>
                     </div>
@@ -247,7 +242,6 @@
         </ul>
     </div>
 </div>
-
 
 <!-- Modal para crear nueva subtarea -->
 <div class="modal fade" id="nuevaSubtareaModal" tabindex="-1" aria-hidden="true">
@@ -268,7 +262,7 @@
                         <label class="form-label">Descripción</label>
                         <textarea name="descripcion" class="form-control" required></textarea>
                     </div>
-                     <div class="mb-3">
+                    <div class="mb-3">
                         <label class="form-label">Prioridad</label>
                         <select name="prioridad" class="form-select priority-select" id="prioritySelect">
                             <option value="Baja">Baja</option>
@@ -279,6 +273,7 @@
                     <div class="mb-3">
                         <label class="form-label">Fecha Vencimiento</label>
                         <input type="date" name="fecha_vencimiento" class="form-control" required>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Asignar a</label>
                         <select name="id_responsable" class="form-select">
@@ -305,40 +300,52 @@
     </div>
 </div>
 
-<!-- Modal para editar subtarea-->
+<!-- Modal Editar Subtarea -->
 <div class="modal fade" id="editarSubtareaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="<?= base_url('subtareas/actualizar') ?>" method="post">
-                <input type="hidden" name="id" id="edit_subtask_id">
+            <form action="<?= base_url('subtareas/update/'.$subtarea['id']) ?>" method="post" id="formEditarSubtarea">
+                <input type="hidden" name="id" id="edit_subtarea_id">
+                <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
                 <div class="modal-header">
                     <h5 class="modal-title">Editar Subtarea</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label">Asunto</label>
-                        <textarea name="asunto" id="edit_asunto" class="form-control" required></textarea>
+                        <textarea name="asunto" id="edit_subtarea_asunto" class="form-control" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Descripción</label>
-                        <textarea name="descripcion" id="edit_descripcion" class="form-control" required></textarea>
+                        <textarea name="descripcion" id="edit_subtarea_descripcion" class="form-control" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Prioridad</label>
-                        <select name="prioridad" class="form-select" id="edit_prioridad">
-                            <option value="Baja">Baja</option>
-                            <option value="Normal">Normal</option>
+                        <select name="prioridad" id="edit_subtarea_prioridad" class="form-select" required>
                             <option value="Alta">Alta</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Estado</label>
+                        <select name="estado" id="edit_subtarea_estado" class="form-select" required>
+                            <option value="En proceso">En proceso</option>
+                            <option value="Completada">Completada</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Fecha Vencimiento</label>
-                        <input type="date" name="fecha_vencimiento" id="edit_fecha_vencimiento" class="form-control" required>
+                        <input type="date" name="fecha_vencimiento" id="edit_subtarea_fecha_vencimiento" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha Recordatorio</label>
+                        <input type="date" name="fecha_recordatorio" id="edit_subtarea_fecha_recordatorio" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Asignar a</label>
-                        <select name="id_responsable" id="edit_id_responsable" class="form-select">
+                        <select name="id_responsable" id="edit_subtarea_responsable" class="form-select">
                             <option value="">Seleccionar colaborador</option>
                             <?php foreach ($usuarios as $usuario): ?>
                                 <option value="<?= $usuario['id'] ?>">
@@ -348,150 +355,98 @@
                         </select>
                     </div>
                     <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="asignado_es_admin" id="edit_permisosAdmin" value="1">
-                        <label class="form-check-label" for="edit_permisosAdmin">
+                        <input class="form-check-input" type="checkbox" name="asignado_es_admin" id="edit_subtarea_permisos_admin" value="1">
+                        <label class="form-check-label" for="edit_subtarea_permisos_admin">
                             Permitir que este colaborador edite la subtarea
                         </label>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Modal de confirmación para eliminar -->
-<div class="modal fade" id="confirmarEliminarModal" tabindex="-1" aria-hidden="true">
+<!-- Modal Confirmar eliminación subtarea (único) -->
+<div class="modal fade" id="confirmarEliminarSubtareaModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Confirmar eliminación</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ¿Estás seguro de que deseas eliminar esta subtarea? Esta acción no se puede deshacer.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <form id="formEliminarSubtarea" method="post" action="<?= site_url('subtareas/eliminar') ?>">
-                    <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                    <input type="hidden" name="id" id="subtareaIdEliminar" />
+            <form action="<?= base_url('subtareas/eliminar') ?>" method="post" id="formEliminarSubtarea">
+                <input type="hidden" name="id" id="idEliminarSubtarea">
+                <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Seguro que quieres eliminar esta subtarea? Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer">
                     <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
-            </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<!-- Script para el modal de edición de subtarea -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.edit-subtask').forEach(btn => {
+    // Manejo del modal de edición de subtarea
+    const editSubtareaModal = new bootstrap.Modal(document.getElementById('editarSubtareaModal'));
+    
+    document.querySelectorAll('.edit-subtask-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-            const data = {
-                id: this.getAttribute('data-id'),
-                asunto: this.getAttribute('data-asunto'),
-                descripcion: this.getAttribute('data-descripcion'),
-                prioridad: this.getAttribute('data-prioridad'),
-                responsable: this.getAttribute('data-responsable'),
-                admin: this.getAttribute('data-admin')
-            };
-            
-            document.getElementById('edit_subtask_id').value = data.id;
-            document.getElementById('edit_asunto').value = data.asunto;
-            document.getElementById('edit_descripcion').value = data.descripcion;
-            document.getElementById('edit_prioridad').value = data.prioridad;
-            document.getElementById('edit_id_responsable').value = data.responsable;
-            document.getElementById('edit_permisosAdmin').checked = data.admin == 1;
-            
-            updatePriorityPreview('edit_prioridad', 'editarSubtareaModal');
+            document.getElementById('edit_subtarea_id').value = this.getAttribute('data-id');
+            document.getElementById('edit_subtarea_asunto').value = this.getAttribute('data-asunto');
+            document.getElementById('edit_subtarea_descripcion').value = this.getAttribute('data-descripcion');
+            document.getElementById('edit_subtarea_prioridad').value = this.getAttribute('data-prioridad');
+            document.getElementById('edit_subtarea_estado').value = this.getAttribute('data-estado');
+            document.getElementById('edit_subtarea_fecha_vencimiento').value = this.getAttribute('data-fecha_vencimiento');
+            document.getElementById('edit_subtarea_fecha_recordatorio').value = this.getAttribute('data-fecha_recordatorio');
+            document.getElementById('edit_subtarea_responsable').value = this.getAttribute('data-id_responsable');
+            document.getElementById('edit_subtarea_permisos_admin').checked = this.getAttribute('data-asignado_es_admin') === '1';
         });
     });
+
+    // Manejo del modal de eliminación de subtarea
+    const deleteSubtareaModal = new bootstrap.Modal(document.getElementById('confirmarEliminarSubtareaModal'));
     
-    function updatePriorityPreview(selectId, modalId) {
-        const select = document.getElementById(selectId);
-        const preview = document.querySelector(`#${modalId} .priority-preview .priority-label`);
-        
-        if (!select || !preview) return;
-        
-        const priority = select.value.toLowerCase();
-        preview.className = 'priority-label priority-' + priority;
-        
-        const icon = preview.querySelector('i');
-        if (icon) {
-            icon.className = 'fas fa-' + 
-                (priority === 'alta' ? 'exclamation-triangle' :
-                 priority === 'normal' ? 'exclamation-circle' : 'check-circle') + ' me-1';
-        }
-    }
-});
-</script>
-
-<!-- Script para el modal de edición de tarea -->
-<script>
-document.querySelectorAll('.edit-task').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const setValueIfExists = (elementId, value) => {
-            const element = document.getElementById(elementId);
-            if (element) element.value = value;
-        };
-
-        setValueIfExists('edit_task_id', this.getAttribute('data-id'));
-        setValueIfExists('edit_asunto', this.getAttribute('data-asunto'));
-        setValueIfExists('edit_descripcion', this.getAttribute('data-descripcion'));
-        setValueIfExists('edit_prioridad', this.getAttribute('data-prioridad'));
-        setValueIfExists('edit_fecha_vencimiento', this.getAttribute('data-fecha_vencimiento'));
-        
-        const recordatorio = this.getAttribute('data-fecha_recordatorio');
-        const fechaRecordatorioElement = document.getElementById('edit_fecha_recordatorio');
-        if (fechaRecordatorioElement) {
-            fechaRecordatorioElement.value = recordatorio && recordatorio !== 'null' && recordatorio !== '' 
-                ? recordatorio.split(' ')[0].split('T')[0] 
-                : '';
-            
-            console.log('Fecha procesada:', fechaRecordatorioElement.value);
-        }
-
+    document.querySelectorAll('.delete-subtask-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('idEliminarSubtarea').value = this.getAttribute('data-id');
+        });
     });
-});
-</script>
 
-<!-- Script para manejar el cambio de estado -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Interceptar todos los selects de estado
+    // Manejo del cambio de estado
     document.querySelectorAll('.estado-select').forEach(select => {
         select.addEventListener('change', function(e) {
-            e.preventDefault(); // Evitar envío normal del formulario
+            e.preventDefault();
             
             const form = this.closest('form');
             const formData = new FormData(form);
             const select = this;
             
-            // Mostrar carga
             select.disabled = true;
             const originalValue = select.value;
             const originalText = select.selectedOptions[0].text;
             select.selectedOptions[0].text = 'Actualizando...';
             
-            // Enviar por AJAX
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest' // Identificar como AJAX
+                    'X-Requested-With': 'XMLHttpRequest'
                 }
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Recargar solo la página para ver cambios
                     window.location.reload();
                 } else {
                     alert('Error: ' + (data.message || 'No se pudo actualizar'));
@@ -509,8 +464,23 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Manejo del modal de edición de tarea
+    document.querySelectorAll('.edit-task').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.getElementById('edit_task_id').value = this.getAttribute('data-id');
+            document.getElementById('edit_asunto').value = this.getAttribute('data-asunto');
+            document.getElementById('edit_descripcion').value = this.getAttribute('data-descripcion');
+            document.getElementById('edit_prioridad').value = this.getAttribute('data-prioridad');
+            document.getElementById('edit_fecha_vencimiento').value = this.getAttribute('data-fecha_vencimiento');
+            
+            const recordatorio = this.getAttribute('data-fecha_recordatorio');
+            document.getElementById('edit_fecha_recordatorio').value = 
+                recordatorio && recordatorio !== 'null' && recordatorio !== '' 
+                ? recordatorio.split(' ')[0].split('T')[0] 
+                : '';
+        });
+    });
 });
 </script>
 
-
-</body>

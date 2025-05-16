@@ -72,6 +72,7 @@ public function crear()
             $this->tareaModel->update($tareaId, ['estado' => 'En proceso']);
         }
 
+        // Notificar al colaborador asignado si existe
         $idResponsable = $this->request->getPost('id_responsable');
         if (!empty($idResponsable)) {
             $this->_notificarAsignacion(
@@ -79,6 +80,7 @@ public function crear()
                 $dataSubtarea['asunto'],
                 $tareaId,
                 $dataSubtarea['fecha_vencimiento'],
+                $dataSubtarea['asignado_es_admin'],
                 $dataSubtarea['prioridad']
             );
         }
@@ -94,8 +96,7 @@ public function crear()
     }
 }
 
-
-private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fechaVencimiento, $prioridad)
+private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fechaVencimiento, $tienePermisosAdmin, $prioridad)
 {
     try {
         $usuarioModel = new \App\Models\UsuarioModel();
@@ -116,6 +117,7 @@ private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fe
             'asuntoSubtarea' => $asuntoSubtarea,
             'idTarea' => $idTarea,
             'fechaVencimiento' => $fechaVencimiento,
+            'tienePermisosAdmin' => $tienePermisosAdmin,
             'prioridad' => $prioridad,
             'base_url' => base_url()
         ]);
@@ -135,6 +137,7 @@ private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fe
         return false;
     }
 }
+
 
     public function editar($subtareaId)
 {
@@ -165,13 +168,39 @@ private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fe
             }
         }
 
-        if (!$this->subTareaModel->update($id, $data)) {
+         if (!$this->subTareaModel->update($id, $data)) {
             return redirect()->back()->withInput()->with('errors', $this->subTareaModel->errors());
         }
 
-        $this->actualizarEstadoTarea($subtarea['id_tarea']); 
-        return redirect()->to('/tareas/' . $subtarea['id_tarea'])->with('success', 'Subtarea actualizada'); 
+        $idTarea = $subtarea['id_tarea'];
+    $todasSubtareas = $this->subTareaModel->where('id_tarea', $idTarea)->findAll();
+    $tarea = $this->tareaModel->find($idTarea);
+
+    $todasCompletadas = true;
+    $alMenosUnaEnProceso = false;
+
+    foreach ($todasSubtareas as $st) {
+        if ($st['estado'] != 'Completada') {
+            $todasCompletadas = false;
+        }
+        if ($st['estado'] == 'En Proceso') {
+            $alMenosUnaEnProceso = true;
+        }
     }
+
+    $nuevoEstado = null;
+    if ($todasCompletadas) {
+        $nuevoEstado = 'Completada';
+    } elseif ($alMenosUnaEnProceso) {
+        $nuevoEstado = 'En Proceso';
+    }
+
+    if ($nuevoEstado && $nuevoEstado != $tarea['estado']) {
+        $this->tareaModel->update($idTarea, ['estado' => $nuevoEstado]);
+    }
+
+    return redirect()->to('tareas/ver/' . $idTarea)->with('success', 'Subtarea actualizada');;
+}
 
    
 public function cambiarEstado()
@@ -235,18 +264,22 @@ public function cambiarEstado()
 public function eliminar()
 {
     $subtareaId = $this->request->getPost('id');
-    $subtarea = $this->subTareaModel->find($subtareaId);
+$subtarea = $this->subTareaModel->find($subtareaId);
 
-    if (!$subtarea) {
-        return redirect()->back()->with('error', 'Subtarea no encontrada');
-    }
+if (!$subtarea) {
+    return redirect()->back()->with('error', 'Subtarea no encontrada');
+}
 
-    if ($subtarea['id_creador'] != session()->get('id')) {
-        return redirect()->back()->with('error', 'No tienes permiso para esta acción');
-    }
+// Obtener la tarea padre para verificar permisos
+$tarea = $this->tareaModel->find($subtarea['id_tarea']);
 
-    $this->subTareaModel->delete($subtareaId);
-    return redirect()->back()->with('success', 'Subtarea eliminada correctamente');
+// Verificar si el usuario actual es el creador de la tarea padre o admin
+if ($tarea['id_usuario'] != session()->get('id') && session()->get('rol') != 'admin') {
+    return redirect()->back()->with('error', 'No tienes permiso para esta acción');
+}
+
+$this->subTareaModel->delete($subtareaId);
+return redirect()->back()->with('success', 'Subtarea eliminada correctamente');
 }
 
 

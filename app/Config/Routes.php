@@ -47,15 +47,13 @@ $routes->group('', function($routes) {
     $routes->group('subtareas', function($routes) {
         $routes->post('crear', 'SubTareaController::crear');
         $routes->get('editar/(:num)', 'SubTareaController::edit/$1');
-        $routes->post('actualizar/(:num)', 'SubTareaController::update/$1');
+        $routes->post('update/(:num)', 'SubTareaController::update/$1');
         $routes->post('cambiarEstado', 'SubTareaController::cambiarEstado');
         $routes->post('eliminar', 'SubTareaController::eliminar');
     });
     
     // Gestión de Usuarios
-    $routes->group('usuarios', function($routes) {
-        $routes->post('update/(:num)', 'UsuarioController::update/$1');
-    });
+    $routes->post('perfil/actualizar/(:num)', 'PerfilController::actualizar/$1');
 
 });
 

@@ -71,3 +71,1385 @@ WARNING - 2025-05-16 13:05:13 --> [DEPRECATED] Creation of dynamic property App\
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 DEBUG - 2025-05-16 13:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 14:44:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 14:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 14:44:27 --> Datos recibidos: {"id_tarea":"18","asunto":"asd","descripcion":"asd","prioridad":"Alta","fecha_vencimiento":"2025-05-14","id_responsable":"11"}
+INFO - 2025-05-16 14:44:27 --> Datos a insertar: {"id_tarea":"18","asunto":"asd","descripcion":"asd","prioridad":"Alta","id_responsable":"11","asignado_es_admin":0,"estado":"En proceso","fecha_vencimiento":"2025-05-14"}
+INFO - 2025-05-16 14:44:31 --> Notificación enviada a enzorreado13@gmail.com sobre subtarea asd
+DEBUG - 2025-05-16 14:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 14:44:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 14:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 14:46:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 14:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 14:54:26 --> Datos recibidos: {"id_tarea":"18","asunto":"gh","descripcion":"gh","prioridad":"Alta","fecha_vencimiento":"2025-05-15","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 14:54:26 --> Datos a insertar: {"id_tarea":"18","asunto":"gh","descripcion":"gh","prioridad":"Alta","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-15"}
+ERROR - 2025-05-16 14:54:26 --> Error en _notificarAsignacion: Undefined variable $asuntoTareaPrincipal
+DEBUG - 2025-05-16 14:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 14:54:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 14:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 14:55:10 --> Datos recibidos: {"id_tarea":"18","asunto":"perrrrr","descripcion":"perrrrr","prioridad":"Normal","fecha_vencimiento":"2025-05-13","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 14:55:10 --> Datos a insertar: {"id_tarea":"18","asunto":"perrrrr","descripcion":"perrrrr","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-13"}
+ERROR - 2025-05-16 14:55:10 --> Error en _notificarAsignacion: Undefined variable $asuntoTareaPrincipal
+DEBUG - 2025-05-16 14:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 14:55:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 14:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 15:02:49 --> Datos recibidos: {"id_tarea":"18","asunto":"perro","descripcion":"perrito","prioridad":"Normal","fecha_vencimiento":"2025-05-21","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 15:02:49 --> Datos a insertar: {"id_tarea":"18","asunto":"perro","descripcion":"perrito","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-21"}
+ERROR - 2025-05-16 15:02:49 --> Error en _notificarAsignacion: Undefined variable $config
+DEBUG - 2025-05-16 15:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:02:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 15:03:54 --> Datos recibidos: {"id_tarea":"18","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-22","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 15:03:54 --> Datos a insertar: {"id_tarea":"18","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+ERROR - 2025-05-16 15:03:55 --> Error en _notificarAsignacion: Undefined variable $config
+DEBUG - 2025-05-16 15:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:03:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 15:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 15:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:05:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:05:17 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 15:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:05:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 15:05:41 --> Datos recibidos: {"id_tarea":"19","asunto":"dale perritooo","descripcion":"mandaleeee","prioridad":"Normal","fecha_vencimiento":"2025-05-17","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 15:05:41 --> Datos a insertar: {"id_tarea":"19","asunto":"dale perritooo","descripcion":"mandaleeee","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-17"}
+ERROR - 2025-05-16 15:05:41 --> Error en _notificarAsignacion: Undefined variable $config
+DEBUG - 2025-05-16 15:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:05:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 15:08:35 --> Datos recibidos: {"id_tarea":"19","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-24","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 15:08:35 --> Datos a insertar: {"id_tarea":"19","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-24"}
+ERROR - 2025-05-16 15:08:35 --> Error en _notificarAsignacion: Undefined variable $asuntoTareaPrincipal
+DEBUG - 2025-05-16 15:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 15:08:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 15:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:43 --> Stored hash: $2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W
+DEBUG - 2025-05-16 17:15:43 --> Input password: 42752078enzo
+DEBUG - 2025-05-16 17:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:15:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:15:49 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:15:51 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:15:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:15:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:16:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:16:19 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 17:16:26 --> ParseError: syntax error, unexpected token "catch"
+[Method: POST, Route: subtareas/crear]
+in APPPATH\Controllers\SubTareaController.php on line 90.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs\\TickTask\\app\\Controllers\\SubTareaController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\SubTareaController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\SubTareaController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\SubTareaController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-16 17:16:57 --> ParseError: syntax error, unexpected token "catch"
+[Method: POST, Route: subtareas/crear]
+in APPPATH\Controllers\SubTareaController.php on line 90.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs\\TickTask\\app\\Controllers\\SubTareaController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\SubTareaController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\SubTareaController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\SubTareaController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-16 17:19:55 --> Datos recibidos: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-21","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:19:55 --> Datos a insertar: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-21"}
+ERROR - 2025-05-16 17:19:57 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\TickTask\system\Email\Email.php:1764
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'D:\\xampp\\htdocs...', 1764)
+#1 D:\xampp\htdocs\TickTask\system\Email\Email.php(1764): mail('enzorreado13@gm...', '=?UTF-8?Q?Has=2...', 'This is a multi...', 'Date: Fri, 16 M...', '-f no-reply@mia...')
+#2 D:\xampp\htdocs\TickTask\system\Email\Email.php(1696): CodeIgniter\Email\Email->sendWithMail()
+#3 D:\xampp\htdocs\TickTask\system\Email\Email.php(1591): CodeIgniter\Email\Email->spoolEmail()
+#4 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(127): CodeIgniter\Email\Email->send()
+#5 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(77): App\Controllers\SubTareaController->_notificarAsignacion('11', 'asd', '20', '2025-05-21', 1, 'Normal')
+#6 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\SubTareaController->crear()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-05-16 17:19:57 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-05-16 17:19:57 --> 
+ERROR - 2025-05-16 17:19:57 --> Error al enviar email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Fri, 16 May 2025 17:19:55 +0000
+From: =?UTF-8?Q?Mi=20Aplicaci=C3=B3n?= &lt;no-reply@miaplicacion.com&gt;
+Return-Path: &lt;no-reply@miaplicacion.com&gt;
+Reply-To: &lt;no-reply@miaplicacion.com&gt;
+User-Agent: CodeIgniter
+X-Sender: no-reply@miaplicacion.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;682773bb552479.67650120@miaplicacion.com&gt;
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=&quot;B_ALT_682773bb5525b4.79668892&quot;
+</pre>
+DEBUG - 2025-05-16 17:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:19:57 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 17:22:03 --> Datos recibidos: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","fecha_vencimiento":"2025-05-22","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:22:03 --> Datos a insertar: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+ERROR - 2025-05-16 17:22:05 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\TickTask\system\Email\Email.php:1764
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'D:\\xampp\\htdocs...', 1764)
+#1 D:\xampp\htdocs\TickTask\system\Email\Email.php(1764): mail('enzorreado13@gm...', '=?UTF-8?Q?Has=2...', 'This is a multi...', 'Date: Fri, 16 M...', '-f no-reply@mia...')
+#2 D:\xampp\htdocs\TickTask\system\Email\Email.php(1696): CodeIgniter\Email\Email->sendWithMail()
+#3 D:\xampp\htdocs\TickTask\system\Email\Email.php(1591): CodeIgniter\Email\Email->spoolEmail()
+#4 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(127): CodeIgniter\Email\Email->send()
+#5 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(77): App\Controllers\SubTareaController->_notificarAsignacion('11', 'asd', '20', '2025-05-22', 1, 'Alta')
+#6 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\SubTareaController->crear()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-05-16 17:22:05 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-05-16 17:22:05 --> 
+ERROR - 2025-05-16 17:22:05 --> Error al enviar email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Fri, 16 May 2025 17:22:03 +0000
+From: =?UTF-8?Q?Mi=20Aplicaci=C3=B3n?= &lt;no-reply@miaplicacion.com&gt;
+Return-Path: &lt;no-reply@miaplicacion.com&gt;
+Reply-To: &lt;no-reply@miaplicacion.com&gt;
+User-Agent: CodeIgniter
+X-Sender: no-reply@miaplicacion.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;6827743b9c5af7.12452807@miaplicacion.com&gt;
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=&quot;B_ALT_6827743b9c5e77.53498950&quot;
+</pre>
+DEBUG - 2025-05-16 17:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:22:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 17:27:53 --> Datos recibidos: {"id_tarea":"20","asunto":"hjk","descripcion":"hgjk","prioridad":"Normal","fecha_vencimiento":"2025-05-22","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:27:54 --> Datos a insertar: {"id_tarea":"20","asunto":"hjk","descripcion":"hgjk","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+CRITICAL - 2025-05-16 17:27:54 --> ArgumentCountError: Too few arguments to function App\Controllers\SubTareaController::_notificarAsignacion(), 5 passed in D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php on line 77 and exactly 6 expected
+[Method: POST, Route: subtareas/crear]
+in APPPATH\Controllers\SubTareaController.php on line 98.
+ 1 APPPATH\Controllers\SubTareaController.php(77): App\Controllers\SubTareaController->_notificarAsignacion('11', 'hjk', '20', '2025-05-22', 1)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SubTareaController->crear()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-16 17:28:10 --> Datos recibidos: {"id_tarea":"20","asunto":"hjk","descripcion":"hgjk","prioridad":"Normal","fecha_vencimiento":"2025-05-22","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:28:10 --> Datos a insertar: {"id_tarea":"20","asunto":"hjk","descripcion":"hgjk","prioridad":"Normal","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+ERROR - 2025-05-16 17:28:12 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in D:\xampp\htdocs\TickTask\system\Email\Email.php:1764
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'D:\\xampp\\htdocs...', 1764)
+#1 D:\xampp\htdocs\TickTask\system\Email\Email.php(1764): mail('enzorreado13@gm...', '=?UTF-8?Q?Has=2...', 'This is a multi...', 'Date: Fri, 16 M...', '-f no-reply@mia...')
+#2 D:\xampp\htdocs\TickTask\system\Email\Email.php(1696): CodeIgniter\Email\Email->sendWithMail()
+#3 D:\xampp\htdocs\TickTask\system\Email\Email.php(1591): CodeIgniter\Email\Email->spoolEmail()
+#4 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(125): CodeIgniter\Email\Email->send()
+#5 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(77): App\Controllers\SubTareaController->_notificarAsignacion('11', 'hjk', '20', '2025-05-22', 1)
+#6 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\SubTareaController->crear()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-05-16 17:28:12 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-05-16 17:28:12 --> 
+ERROR - 2025-05-16 17:28:12 --> Error al enviar email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Fri, 16 May 2025 17:28:10 +0000
+From: =?UTF-8?Q?Mi=20Aplicaci=C3=B3n?= &lt;no-reply@miaplicacion.com&gt;
+Return-Path: &lt;no-reply@miaplicacion.com&gt;
+Reply-To: &lt;no-reply@miaplicacion.com&gt;
+User-Agent: CodeIgniter
+X-Sender: no-reply@miaplicacion.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;682775aaaaaf45.91201091@miaplicacion.com&gt;
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=&quot;B_ALT_682775aaaab084.43365507&quot;
+</pre>
+DEBUG - 2025-05-16 17:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:28:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:33:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 17:33:33 --> Datos recibidos: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","fecha_vencimiento":"2025-05-13","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:33:33 --> Datos a insertar: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-13"}
+ERROR - 2025-05-16 17:33:34 --> Error en _notificarAsignacion: Undefined variable $tienePermisosAdmin
+DEBUG - 2025-05-16 17:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:33:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:35:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 17:36:06 --> Datos recibidos: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","fecha_vencimiento":"2025-05-22","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:36:06 --> Datos a insertar: {"id_tarea":"20","asunto":"asd","descripcion":"asd","prioridad":"Alta","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+INFO - 2025-05-16 17:36:10 --> Notificación enviada a enzorreado13@gmail.com sobre subtarea asd
+DEBUG - 2025-05-16 17:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:36:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 17:37:55 --> Datos recibidos: {"id_tarea":"20","asunto":"lkj","descripcion":";klj","prioridad":"Baja","fecha_vencimiento":"2025-05-22","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 17:37:56 --> Datos a insertar: {"id_tarea":"20","asunto":"lkj","descripcion":";klj","prioridad":"Baja","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+INFO - 2025-05-16 17:37:59 --> Notificación enviada a enzorodriguez.078@gmail.com sobre subtarea lkj
+DEBUG - 2025-05-16 17:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:37:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 17:38:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 17:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 17:57:22 --> Error: Call to a member function getUnreadCount() on null
+[Method: GET, Route: dashboard]
+in APPPATH\Views\layouts\header.php on line 81.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 4 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 8 APPPATH\Controllers\DashboardController.php(73): view('dashboard/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 17:59:53 --> mysqli_sql_exception: Unknown column 'leida' in 'where clause' in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 D:\xampp\htdocs\TickTask\app\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+#6 D:\xampp\htdocs\TickTask\app\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+#7 D:\xampp\htdocs\TickTask\system\View\View.php(224): include('D:\\xampp\\htdocs...')
+#8 D:\xampp\htdocs\TickTask\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 D:\xampp\htdocs\TickTask\system\Common.php(1173): CodeIgniter\View\View->render('layouts/header', Array, true)
+#10 D:\xampp\htdocs\TickTask\app\Views\dashboard\index.php(138): view('layouts/header')
+#11 D:\xampp\htdocs\TickTask\system\View\View.php(224): include('D:\\xampp\\htdocs...')
+#12 D:\xampp\htdocs\TickTask\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#13 D:\xampp\htdocs\TickTask\system\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', Array, true)
+#14 D:\xampp\htdocs\TickTask\app\Controllers\DashboardController.php(90): view('dashboard/index', Array)
+#15 D:\xampp\htdocs\TickTask\app\Controllers\DashboardController.php(31): App\Controllers\DashboardController->misSubtareas()
+#16 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+#17 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+#18 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#19 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#20 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#21 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#22 {main}
+CRITICAL - 2025-05-16 17:59:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'leida' in 'where clause'
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 8 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+ 9 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+10 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+12 APPPATH\Controllers\DashboardController.php(90): view('dashboard/index', [...])
+13 APPPATH\Controllers\DashboardController.php(31): App\Controllers\DashboardController->misSubtareas()
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+15 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+16 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-16 17:59:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'leida' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 7 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 8 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+10 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+11 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+12 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+14 APPPATH\Controllers\DashboardController.php(90): view('dashboard/index', [...])
+15 APPPATH\Controllers\DashboardController.php(31): App\Controllers\DashboardController->misSubtareas()
+16 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+17 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+18 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-16 17:59:53 --> [Caused by] mysqli_sql_exception: Unknown column 'leida' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 8 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 9 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+11 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+12 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+13 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+14 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+15 APPPATH\Controllers\DashboardController.php(90): view('dashboard/index', [...])
+16 APPPATH\Controllers\DashboardController.php(31): App\Controllers\DashboardController->misSubtareas()
+17 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+18 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+19 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+20 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+22 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 17:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 17:59:54 --> mysqli_sql_exception: Unknown column 'leida' in 'where clause' in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 D:\xampp\htdocs\TickTask\app\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+#6 D:\xampp\htdocs\TickTask\app\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+#7 D:\xampp\htdocs\TickTask\system\View\View.php(224): include('D:\\xampp\\htdocs...')
+#8 D:\xampp\htdocs\TickTask\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 D:\xampp\htdocs\TickTask\system\Common.php(1173): CodeIgniter\View\View->render('layouts/header', Array, true)
+#10 D:\xampp\htdocs\TickTask\app\Views\dashboard\index.php(138): view('layouts/header')
+#11 D:\xampp\htdocs\TickTask\system\View\View.php(224): include('D:\\xampp\\htdocs...')
+#12 D:\xampp\htdocs\TickTask\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#13 D:\xampp\htdocs\TickTask\system\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', Array, true)
+#14 D:\xampp\htdocs\TickTask\app\Controllers\DashboardController.php(73): view('dashboard/index', Array)
+#15 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+#16 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+#17 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#18 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#19 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#20 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#21 {main}
+CRITICAL - 2025-05-16 17:59:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'leida' in 'where clause'
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 8 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+ 9 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+10 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+12 APPPATH\Controllers\DashboardController.php(73): view('dashboard/index', [...])
+13 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+14 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+15 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-16 17:59:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'leida' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 7 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 8 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+10 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+11 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+12 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+13 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+14 APPPATH\Controllers\DashboardController.php(73): view('dashboard/index', [...])
+15 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+16 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+17 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-16 17:59:54 --> [Caused by] mysqli_sql_exception: Unknown column 'leida' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = \'4\'
+AND `leida` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notificaciones`
+WHERE `id_usuario` = :id_usuario:
+AND `leida` = :leida:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificacionModel.php(24): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Views\layouts\header.php(81): App\Models\NotificacionModel->getUnreadCount('4')
+ 8 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 9 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+11 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+12 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+13 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+14 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+15 APPPATH\Controllers\DashboardController.php(73): view('dashboard/index', [...])
+16 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+17 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+18 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+19 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+20 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+21 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:05:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:05:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:05:39 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:05:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 18:05:52 --> ErrorException: Cannot redeclare App\Controllers\SubTareaController::_notificarAsignacion()
+[Method: POST, Route: subtareas/crear]
+in APPPATH\Controllers\SubTareaController.php on line 117.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-05-16 18:10:19 --> Datos recibidos: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Alta","fecha_vencimiento":"2025-05-23","id_responsable":"11","asignado_es_admin":"1"}
+INFO - 2025-05-16 18:10:19 --> Datos a insertar: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Alta","id_responsable":"11","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-23"}
+ERROR - 2025-05-16 18:10:19 --> Error en _notificarAsignacion: Undefined array key "titulo"
+DEBUG - 2025-05-16 18:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:10:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:43 --> Stored hash: $2y$10$rJNDrYM5zw6LUf7JiimwIe/l8KfR4Y/3QbeQFlw0S49o1Z9MHcp.u
+DEBUG - 2025-05-16 18:10:43 --> Input password: 42752078enzo
+DEBUG - 2025-05-16 18:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:15:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:16:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:16:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 18:16:18 --> Datos recibidos: {"id_tarea":"22","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-13","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 18:16:18 --> Datos a insertar: {"id_tarea":"22","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-13"}
+ERROR - 2025-05-16 18:16:18 --> Error en _notificarAsignacion: Undefined array key "titulo"
+DEBUG - 2025-05-16 18:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:16:18 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:32 --> Stored hash: $2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W
+DEBUG - 2025-05-16 18:16:32 --> Input password: 42752078enzo
+DEBUG - 2025-05-16 18:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:17:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 18:18:02 --> Datos recibidos: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-14","id_responsable":"4"}
+INFO - 2025-05-16 18:18:02 --> Datos a insertar: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"4","asignado_es_admin":0,"estado":"En proceso","fecha_vencimiento":"2025-05-14"}
+DEBUG - 2025-05-16 18:18:02 --> Iniciando notificación para usuario: 4, tarea: 21
+ERROR - 2025-05-16 18:18:02 --> Error en _notificarAsignacion: Undefined array key "titulo"
+#0 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(113): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'D:\\xampp\\htdocs...', 113)
+#1 D:\xampp\htdocs\TickTask\app\Controllers\SubTareaController.php(78): App\Controllers\SubTareaController->_notificarAsignacion('4', 'asd', '21', '2025-05-14', 0)
+#2 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\SubTareaController->crear()
+#3 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+#4 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#7 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#8 {main}
+DEBUG - 2025-05-16 18:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:18:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:22:37 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 18:22:37 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\NotificacionModel::getUnreadCount
+[Method: GET, Route: tareas/ver/21]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Views\layouts\header.php(81): CodeIgniter\Model->__call('getUnreadCount', [...])
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\layouts\\header.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 5 APPPATH\Views\tareas\verTarea.php(1): view('layouts/header')
+ 6 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\tareas\\verTarea.php')
+ 7 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('/tareas/verTarea', [], true)
+ 9 APPPATH\Controllers\TareaController.php(235): view('/tareas/verTarea', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TareaController->ver('21')
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareaController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-16 18:24:17 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 18:24:17 --> Error: Call to a member function getUnreadCount() on null
+[Method: GET, Route: tareas/ver/21]
+in APPPATH\Views\layouts\header.php on line 81.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 4 APPPATH\Views\tareas\verTarea.php(1): view('layouts/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\tareas\\verTarea.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('/tareas/verTarea', [], true)
+ 8 APPPATH\Controllers\TareaController.php(235): view('/tareas/verTarea', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TareaController->ver('21')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareaController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 18:24:22 --> Error: Call to a member function getUnreadCount() on null
+[Method: GET, Route: dashboard]
+in APPPATH\Views\layouts\header.php on line 81.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('layouts/header', [], true)
+ 4 APPPATH\Views\dashboard\index.php(138): view('layouts/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\xampp\\htdocs\\TickTask\\app\\Views\\dashboard\\index.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 8 APPPATH\Controllers\DashboardController.php(73): view('dashboard/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:24:54 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 18:25:03 --> Datos recibidos: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Baja","fecha_vencimiento":"2025-05-22","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 18:25:03 --> Datos a insertar: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Baja","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-22"}
+INFO - 2025-05-16 18:25:07 --> Notificación enviada a enzorodriguez.078@gmail.com sobre subtarea asd
+DEBUG - 2025-05-16 18:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:25:07 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:26:16 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 18:26:24 --> Datos recibidos: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-21","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 18:26:24 --> Datos a insertar: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-21"}
+INFO - 2025-05-16 18:26:27 --> Notificación enviada a enzorodriguez.078@gmail.com sobre subtarea asd
+DEBUG - 2025-05-16 18:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:26:27 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 18:26:58 --> Datos recibidos: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","fecha_vencimiento":"2025-05-14","id_responsable":"4","asignado_es_admin":"1"}
+INFO - 2025-05-16 18:26:58 --> Datos a insertar: {"id_tarea":"21","asunto":"asd","descripcion":"asd","prioridad":"Normal","id_responsable":"4","asignado_es_admin":1,"estado":"En proceso","fecha_vencimiento":"2025-05-14"}
+INFO - 2025-05-16 18:27:02 --> Notificación enviada a enzorodriguez.078@gmail.com sobre subtarea asd
+DEBUG - 2025-05-16 18:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 18:27:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 18:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 18:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:07:39 --> Iniciando actualización de perfil para ID: 4
+DEBUG - 2025-05-16 19:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:07:39 --> Datos recibidos: Array
+(
+    [nombre] => Enzo Rodriguez
+    [username] => enchoto2
+    [email] => enzorodriguez.078@gmail.com
+    [password] => 
+    [confirm_password] => 
+)
+
+ERROR - 2025-05-16 19:07:39 --> Excepción al actualizar perfil: Undefined variable $usuarioModel
+DEBUG - 2025-05-16 19:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 19:07:39 --> ParseError: syntax error, unexpected token "endif", expecting end of file
+[Method: GET, Route: perfil]
+in APPPATH\Views\perfil\perfil.php on line 145.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('perfil/perfil', [], true)
+ 3 APPPATH\Controllers\PerfilController.php(40): view('perfil/perfil', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PerfilController->perfil()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerfilController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 19:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:08:08 --> Iniciando actualización de perfil para ID: 4
+DEBUG - 2025-05-16 19:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:08:08 --> Datos recibidos: Array
+(
+    [nombre] => Enzo Rodriguez
+    [username] => enchoto2
+    [email] => enzorodriguez.078@gmail.com
+    [password] => 
+    [confirm_password] => 
+)
+
+ERROR - 2025-05-16 19:08:08 --> Excepción al actualizar perfil: Undefined variable $usuarioModel
+DEBUG - 2025-05-16 19:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:17:04 --> Error actualizando perfil 4: La operación de actualización no afectó ningún registro
+DEBUG - 2025-05-16 19:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:21:30 --> Error al actualizar perfil ID 4: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 19:24:44 --> ParseError: syntax error, unexpected token "<", expecting "function" or "const"
+[Method: GET, Route: perfil]
+in APPPATH\Controllers\PerfilController.php on line 48.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs\\TickTask\\app\\Controllers\\PerfilController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\PerfilController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\PerfilController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\PerfilController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 19:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:25:24 --> Error al actualizar perfil ID 4: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:28:53 --> Error al actualizar perfil: Este correo ya está registrado
+DEBUG - 2025-05-16 19:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 19:30:33 --> ParseError: Unmatched ')'
+[Method: GET, Route: perfil]
+in APPPATH\Views\perfil\perfil.php on line 107.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('perfil/perfil', [], true)
+ 3 APPPATH\Controllers\PerfilController.php(42): view('perfil/perfil', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PerfilController->perfil()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PerfilController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 19:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:30:52 --> Error al actualizar perfil: Este correo ya está registrado
+DEBUG - 2025-05-16 19:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:37:19 --> Error al actualizar perfil: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:39:41 --> Error al actualizar perfil: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:40:18 --> Error al actualizar perfil: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 19:44:16 --> ErrorException: Assignments can only happen to writable values
+[Method: GET, Route: perfil]
+in APPPATH\Controllers\PerfilController.php on line 70.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2025-05-16 19:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-16 19:46:15 --> Error al actualizar perfil: No se pudo completar la actualización
+DEBUG - 2025-05-16 19:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:48:58 --> Datos a actualizar: {"nombre":"Enzo Rodriguez","username":"enchoto2","email":"enzorodriguez.078@gmail.com"}
+ERROR - 2025-05-16 19:48:58 --> Error al actualizar perfil: No se pudo completar la actualización - Archivo: D:\xampp\htdocs\TickTask\app\Controllers\PerfilController.php - Línea: 128
+DEBUG - 2025-05-16 19:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-16 19:51:14 --> Actualización manual realizada con éxito.
+DEBUG - 2025-05-16 19:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:12 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguez","username":"enchoto1","email":"enzorodriguez.078@gmail.com"}
+DEBUG - 2025-05-16 19:53:12 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguez","email":"enzorodriguez.078@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto1","es_admin":"0"}
+INFO - 2025-05-16 19:53:12 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:16 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguezz","username":"enchoto1","email":"enzorodriguez.078@gmail.com"}
+DEBUG - 2025-05-16 19:53:16 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguezz","email":"enzorodriguez.078@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto1","es_admin":"0"}
+INFO - 2025-05-16 19:53:16 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:22 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguezz","username":"enchoto1","email":"enzorodriguez.0178@gmail.com"}
+DEBUG - 2025-05-16 19:53:22 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguezz","email":"enzorodriguez.0178@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto1","es_admin":"0"}
+INFO - 2025-05-16 19:53:22 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:53:37 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguez","username":"enchoto","email":"enzorodriguez.178@gmail.com"}
+DEBUG - 2025-05-16 19:53:37 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguez","email":"enzorodriguez.178@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto","es_admin":"0"}
+INFO - 2025-05-16 19:53:37 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 19:56:32 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: perfil]
+in APPPATH\Views\layouts\header.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-16 19:56:34 --> ErrorException: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: perfil]
+in APPPATH\Views\layouts\header.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2025-05-16 19:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:57:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:40 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguez","username":"enchoto1","email":"enzorodriguez.178@gmail.com"}
+DEBUG - 2025-05-16 19:58:40 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguez","email":"enzorodriguez.178@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto1","es_admin":"0"}
+INFO - 2025-05-16 19:58:40 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:44 --> Datos antes de actualizar: {"nombre":"Enzo Rodriguez","username":"enchoto","email":"enzorodriguez.178@gmail.com"}
+DEBUG - 2025-05-16 19:58:44 --> Datos después de actualizar: {"id":"4","nombre":"Enzo Rodriguez","email":"enzorodriguez.178@gmail.com","password":"$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W","rol":"usuario","username":"enchoto","es_admin":"0"}
+INFO - 2025-05-16 19:58:44 --> Perfil actualizado correctamente.
+DEBUG - 2025-05-16 19:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 19:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:02:48 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:02:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:02:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:05:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:07:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:08:05 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:08:09 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:08:11 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:17:38 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:17:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:17:43 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:17:56 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:17:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:18:01 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:26:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 20:27:05 --> ErrorException: Undefined array key "id_creador"
+[Method: POST, Route: subtareas/eliminar]
+in APPPATH\Controllers\SubTareaController.php on line 247.
+ 1 APPPATH\Controllers\SubTareaController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_creador"', 'D:\\xampp\\htdocs\\TickTask\\app\\Controllers\\SubTareaController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SubTareaController->eliminar()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:29:26 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:29:35 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:29:38 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:32:58 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:36:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:36:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:36:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:36:33 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:36:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-16 20:36:36 --> Error: Call to undefined method App\Controllers\SubTareaController::actualizarEstadoTarea()
+[Method: POST, Route: subtareas/update/37]
+in APPPATH\Controllers\SubTareaController.php on line 175.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SubTareaController->update('37')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubTareaController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-16 20:41:42 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:42:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:42:14 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:45:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:45:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-16 20:45:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\TareaController::$subTareaModel is deprecated in APPPATH\Controllers\TareaController.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TareaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-16 20:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-16 20:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
