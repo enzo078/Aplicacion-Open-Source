@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2025 a las 22:48:15
+-- Tiempo de generación: 16-05-2025 a las 22:49:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,32 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `colaboradores`
---
-
-CREATE TABLE `colaboradores` (
-  `id` int(11) NOT NULL,
-  `id_tarea` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `notificaciones`
---
-
-CREATE TABLE `notificaciones` (
-  `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `id_tarea` int(11) DEFAULT NULL,
-  `mensaje` text NOT NULL,
-  `fecha` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `subtareas`
 --
 
@@ -60,11 +34,11 @@ CREATE TABLE `subtareas` (
   `estado` enum('Definido','En proceso','Completada') DEFAULT 'Definido',
   `prioridad` enum('Baja','Normal','Alta') DEFAULT NULL,
   `fecha_vencimiento` date DEFAULT NULL,
-  `comentario` text DEFAULT NULL,
   `id_responsable` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `asignado_es_admin` tinyint(1) DEFAULT 0
+  `asignado_es_admin` tinyint(1) DEFAULT 0,
+  `asunto` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -79,7 +53,7 @@ CREATE TABLE `tareas` (
   `asunto` varchar(150) NOT NULL,
   `descripcion` text DEFAULT NULL,
   `prioridad` enum('Baja','Normal','Alta') DEFAULT 'Normal',
-  `estado` enum('Definido','En proceso','Completada') DEFAULT 'Definido',
+  `estado` enum('Definida','En proceso','Completada') DEFAULT 'Definida',
   `fecha_vencimiento` date DEFAULT NULL,
   `fecha_recordatorio` date DEFAULT NULL,
   `color` varchar(20) DEFAULT NULL,
@@ -93,7 +67,8 @@ CREATE TABLE `tareas` (
 --
 
 INSERT INTO `tareas` (`id`, `id_usuario`, `asunto`, `descripcion`, `prioridad`, `estado`, `fecha_vencimiento`, `fecha_recordatorio`, `color`, `archivada`, `created_at`, `updated_at`) VALUES
-(10, 4, 'sdasdasd', 'asda', 'Baja', '', '2025-05-15', '2025-05-14', NULL, 0, '2025-05-09 02:16:49', '2025-05-09 02:16:49');
+(21, 4, 'Arreglar base de datos', 'La base de datos esta funcionando mal, arregarla lo antes posible', 'Normal', 'En proceso', '2025-05-17', '2025-05-15', NULL, 0, '2025-05-16 21:05:34', '2025-05-16 21:10:19'),
+(22, 11, 'asd', 'ads', 'Normal', 'En proceso', '2025-05-29', '2025-05-15', NULL, 0, '2025-05-16 21:16:05', '2025-05-16 21:16:18');
 
 -- --------------------------------------------------------
 
@@ -116,27 +91,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `rol`, `username`, `es_admin`) VALUES
-(4, 'Enzo Rodriguez', 'enzorodriguez.078@gmail.com', '$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W', 'usuario', 'enchoto', 0);
+(4, 'Enzo Rodriguez', 'enzorodriguez.178@gmail.com', '$2y$10$a.Fb4Ekq8TD0PulI5Ntvnuhas874XkvpAnijcB0DCs8k5wiSyDj0W', 'usuario', 'enchoto', 0),
+(11, 'Lautaro Gimenez', 'enzorreado13@gmail.com', '$2y$10$rJNDrYM5zw6LUf7JiimwIe/l8KfR4Y/3QbeQFlw0S49o1Z9MHcp.u', 'usuario', 'pedorro', 0);
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `colaboradores`
---
-ALTER TABLE `colaboradores`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_tarea` (`id_tarea`),
-  ADD KEY `id_usuario` (`id_usuario`);
-
---
--- Indices de la tabla `notificaciones`
---
-ALTER TABLE `notificaciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_tarea` (`id_tarea`);
 
 --
 -- Indices de la tabla `subtareas`
@@ -166,52 +126,26 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `colaboradores`
---
-ALTER TABLE `colaboradores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `notificaciones`
---
-ALTER TABLE `notificaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `subtareas`
 --
 ALTER TABLE `subtareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `colaboradores`
---
-ALTER TABLE `colaboradores`
-  ADD CONSTRAINT `colaboradores_ibfk_1` FOREIGN KEY (`id_tarea`) REFERENCES `tareas` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `colaboradores_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
-
---
--- Filtros para la tabla `notificaciones`
---
-ALTER TABLE `notificaciones`
-  ADD CONSTRAINT `notificaciones_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `notificaciones_ibfk_2` FOREIGN KEY (`id_tarea`) REFERENCES `tareas` (`id`) ON DELETE SET NULL;
 
 --
 -- Filtros para la tabla `subtareas`
