@@ -1,0 +1,618 @@
+DEBUG - 2025-05-07 13:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 13:50:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('/', [], true)
+ 3 APPPATH\Controllers\Home.php(13): view('/', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 13:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 13:53:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('/', [], true)
+ 3 APPPATH\Controllers\Home.php(13): view('/', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-07 14:04:22 --> mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\TickTask\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 D:\xampp\htdocs\TickTask\app\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-07 14:04:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:04:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:04:22 --> [Caused by] mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-07 14:05:55 --> mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\TickTask\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 D:\xampp\htdocs\TickTask\app\Controllers\AuthController.php(30): CodeIgniter\BaseModel->first()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-07 14:05:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+[Method: POST, Route: auth/registro]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\AuthController.php(30): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:05:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\AuthController.php(30): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:05:55 --> [Caused by] mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\AuthController.php(30): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->guardar()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:07:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:07:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-07 14:07:22 --> mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\TickTask\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 D:\xampp\htdocs\TickTask\app\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-07 14:07:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:07:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:07:22 --> [Caused by] mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-07 14:09:37 --> mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine in D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\xampp\htdocs\TickTask\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\xampp\htdocs\TickTask\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\xampp\htdocs\TickTask\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\xampp\htdocs\TickTask\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\TickTask\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 D:\xampp\htdocs\TickTask\app\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+#7 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 D:\xampp\htdocs\TickTask\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\TickTask\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\xampp\htdocs\TickTask\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\xampp\htdocs\TickTask\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-07 14:09:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:09:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 14:09:37 --> [Caused by] mysqli_sql_exception: Table 'gestor_tareas.usuarios' doesn't exist in engine
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `usuarios`
+WHERE `email` = \'enzorodriguez.078@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\AuthController.php(63): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 14:22:17 --> ParseError: syntax error, unexpected token "endif"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\dashboard\index.php on line 201.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(53): view('dashboard/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:22:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 14:22:29 --> ParseError: syntax error, unexpected token "endif"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\dashboard\index.php on line 201.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(53): view('dashboard/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 14:22:33 --> ParseError: syntax error, unexpected token "endif"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\dashboard\index.php on line 201.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(53): view('dashboard/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:32:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 14:48:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/editar_tarea.php"
+[Method: GET, Route: tareas/editar/5]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/editar_tarea.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('dashboard/editar_tarea', [], true)
+ 3 APPPATH\Controllers\DashboardController.php(81): view('dashboard/editar_tarea', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DashboardController->editarTarea('5')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 14:50:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 14:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 17:25:58 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "5""
+[Method: GET, Route: dashboard/archivar/5%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/5"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/5"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 17:26:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "6""
+[Method: GET, Route: dashboard/archivar/6%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/6"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/6"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 17:26:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "7""
+[Method: GET, Route: dashboard/archivar/7%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/7"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/7"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 17:26:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "5""
+[Method: GET, Route: dashboard/archivar/5%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/5"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/5"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 17:26:17 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "5""
+[Method: GET, Route: dashboard/archivar/5%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/5"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/5"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 17:29:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "5""
+[Method: GET, Route: dashboard/archivar/5%22]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dashboard/archivar/5"')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dashboard/archivar/5"')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 17:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-07 17:36:54 --> ArgumentCountError: Too few arguments to function App\Controllers\TareaController::archivar(), 0 passed in D:\xampp\htdocs\TickTask\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: tareas/archivar]
+in APPPATH\Controllers\TareaController.php on line 153.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TareaController->archivar()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TareaController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-07 17:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:56:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 17:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 18:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:17:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:18:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 19:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-07 20:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
