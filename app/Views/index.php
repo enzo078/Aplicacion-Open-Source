@@ -121,6 +121,9 @@
         position: relative;
         z-index: 1;
     }
+    .separador{
+        margin-top: 7rem;
+    }
 </style>
 
 <main class="hero">
@@ -130,23 +133,33 @@
 </main>
 <section class="features">
     <div class="container">
-        <h2 class="section-title">Potencia tu productividad</h2>
-        
+        <h2 class="section-title">Revoluciona tu gestión de tareas</h2>
+
         <div class="features-grid">
-            <!-- Característica 1 -->
+            
             <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Aumenta la eficiencia</h3>
-                <p>Acelera las tareas diarias y mejora los flujos de trabajo para obtener mejores resultados.</p>
+                <div class="feature-icon">🚀</div>
+                <h3>Optimiza tus procesos</h3>
+                <p>Simplifica la ejecución de actividades cotidianas con flujos inteligentes que maximizan tu rendimiento.</p>
             </div>
             
-            <!-- Característica 2 -->
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Impulsa la productividad</h3>
-                <p>Mantén a todo tu equipo alineado para lograr más en menos tiempo.</p>
+                <div class="feature-icon">🤝</div>
+                <h3>Trabajo fluido en equipo </h3>
+                <p>Coordina perfectamente las subtareas entre colaboradores para alcanzar objetivos compartidos con mayor agilidad.</p>
             </div>
 
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Control detallado</h3>
+                <p>Distribuye, monitorea y ajusta subtareas en tiempo real para mantener el proyecto siempre encarrilado.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="separador">
+
+    </div>
 </section>
 
 <?= view('layouts/footer') ?>

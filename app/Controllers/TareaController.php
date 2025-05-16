@@ -140,7 +140,7 @@ class TareaController extends BaseController
         $subtareas = $this->subTareaModel->where('id_tarea', $id)->findAll();
         
         foreach ($subtareas as $subtarea) {
-            if ($subtarea['estado'] != 'completada') {
+            if ($subtarea['estado'] != 'Completada') {
                 throw new \Exception('No se puede eliminar: existen subtareas pendientes');
             }
         }
@@ -158,48 +158,76 @@ class TareaController extends BaseController
     }
 }
 
-    public function archivar()
-    {
-        $id = $this->request->getPost('id'); 
+   public function archivar()
+{
+    $id = $this->request->getPost('id'); 
     
-        $tarea = $this->tareaModel->where('id', $id)
-                                ->where('id_usuario', session()->get('id'))
-                                ->first();
-        if (!$tarea) {
-            return redirect()->to('/dashboard')->with('error', 'No tienes permiso');
-        }
-
-        $this->tareaModel->update($id, [
-            'estado' => 'archivada',
-            'archivada' => 1 
-        ]);
-
-        return redirect()->to('/dashboard?filter=archived')->with('success', 'Tarea archivada');
+    $tarea = $this->tareaModel->where('id', $id)
+                            ->where('id_usuario', session()->get('id'))
+                            ->first();
+    
+    if (!$tarea) {
+        session()->setFlashdata('error', 'No tienes permiso para esta acción');
+        return redirect()->back();
     }
 
+    if ($tarea['estado'] !== 'Completada') {
+        session()->setFlashdata('error', 'La tarea debe estar completada para poder archivarse');
+        return redirect()->back();
+    }
 
-    public function ver($id)
+    $subtareas = $this->subTareaModel->where('id_tarea', $id)->findAll();
+
+    foreach ($subtareas as $subtarea) {
+        if ($subtarea['estado'] !== 'Completada') {
+            session()->setFlashdata('error', 'Todas las subtareas deben estar completadas para archivar la tarea');
+            return redirect()->back();
+        }
+    }
+
+    $this->tareaModel->update($id, [
+        'estado' => 'Archivada',
+        'archivada' => 1 
+    ]);
+
+    session()->setFlashdata('success', 'Tarea archivada correctamente');
+    return redirect()->to('/dashboard?filter=archived');
+}
+
+
+    public function ver($id, $fromSubtarea = false)
 {
-    $subtareas = $this->subTareaModel
-        ->select('subtareas.*, usuarios.username as responsable_nombre')
-        ->join('usuarios', 'usuarios.id = subtareas.id_responsable', 'left')
-        ->where('subtareas.id_tarea', $id)
-        ->orderBy('subtareas.created_at', 'DESC')
-        ->findAll();
     $tareaModel = model('TareaModel');
     $subTareaModel = model('SubtareaModel');
+
+    if (!$tareaModel->puedeEditarTarea($id, session()->get('id'))) {
+        return redirect()->to('/dashboard')->with('error', 'No tienes permiso para ver esta tarea o la tarea no existe');
+    }
     
+    if ($fromSubtarea) {
+        $subtarea = $subTareaModel->find($id);
+        if (!$subtarea) {
+            return redirect()->to('/dashboard')->with('error', 'Subtarea no encontrada');
+        }
+        $id = $subtarea['id_tarea']; 
+    }
+
     if (!$tareaModel->puedeEditarTarea($id, session()->get('id'))) {
         return redirect()->to('/dashboard')->with('error', 'No tienes permiso para ver esta tarea');
     }
 
-    $tarea = $tareaModel->select('tareas.*, usuarios.nombre as usuario_nombre')
+    $tarea = $tareaModel->select('tareas.*, usuarios.username as usuario_nombre')
                        ->join('usuarios', 'usuarios.id = tareas.id_usuario')
                        ->find($id);
 
-    $subtareas = $subTareaModel->select('subtareas.*, usuarios.nombre as responsable_nombre')
+    if (!$tarea) {
+        return redirect()->to('/dashboard')->with('error', 'Tarea no encontrada');
+    }
+
+    $subtareas = $subTareaModel->select('subtareas.*, usuarios.username as responsable_nombre')
                               ->join('usuarios', 'usuarios.id = subtareas.id_responsable', 'left')
                               ->where('id_tarea', $id)
+                              ->orderBy('created_at', 'DESC')
                               ->findAll();
 
     $usuarios = model('UsuarioModel')->findAll();
@@ -209,14 +237,34 @@ class TareaController extends BaseController
         'subtareas' => $subtareas,
         'usuarios' => $usuarios,
         'tareaModel' => $tareaModel,
-        'subtareaModel' => $subTareaModel
+        'subtareaModel' => $subTareaModel,
+        'subtareaFocus' => $fromSubtarea ? $id : null 
     ]);
 }
 
-public function puedeEditarTarea($id_tarea, $id_usuario)
-{
-    $tarea = $this->find($id_tarea);
-    return $tarea && $tarea['id_usuario'] == $id_usuario;
+public function puedeEditarTarea($tareaId, $usuarioId) {
+    $tarea = $this->find($tareaId);
+    
+    if (!$tarea) {
+        return false;
+    }
+
+    if (session()->get('rol') == 'admin') {
+        return true;
+    }
+
+    if ($tarea['id_usuario'] == $usuarioId) {
+        return true;
+    }
+
+    $subtareaModel = model('SubtareaModel');
+    $esColaborador = $subtareaModel
+        ->where('id_tarea', $tareaId)
+        ->where('id_responsable', $usuarioId)
+        ->countAllResults() > 0;
+
+    return $esColaborador;
 }
+
 
 }

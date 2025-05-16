@@ -82,7 +82,6 @@ a {
  font-size:18px
 }
 .mini-footer {
- background:#192027;
  text-align:center;
  padding:px 0
 }

@@ -44,12 +44,41 @@ class TareaModel extends Model
         return $this->where('id', $usuarioId)->findAll();
     }
 
-    public function puedeEditarTarea($tareaId, $usuarioId) {
+    public function puedeEditarTarea($tareaId, $usuarioId) 
+    {
         $tarea = $this->find($tareaId);
-    
-        return ($tarea['id_usuario'] == $usuarioId) || (session()->get('rol') == 'admin');
+        
+        if (!$tarea) {
+            log_message('error', "Tarea no encontrada: ID {$tareaId}");
+            return false;
+        }
+        
+        // Administradores tienen acceso completo
+        if (session()->get('rol') == 'admin') {
+            return true;
+        }
+        
+        // El creador de la tarea tiene acceso
+        if ($tarea['id_usuario'] == $usuarioId) {
+            return true;
+        }
+        
+        // Verificar si es responsable de subtareas
+        $subtareaModel = model('SubtareaModel');
+        $tieneSubtareas = $subtareaModel->where('id_tarea', $tareaId)
+                                       ->where('id_responsable', $usuarioId)
+                                       ->countAllResults();
+        
+        // Si tiene permisos de admin en alguna subtarea
+        $tienePermisosAdmin = $subtareaModel->where('id_tarea', $tareaId)
+                                           ->where('id_responsable', $usuarioId)
+                                           ->where('asignado_es_admin', 1)
+                                           ->countAllResults();
+        
+        return ($tieneSubtareas > 0) || ($tienePermisosAdmin > 0);
     }
-
 }
+
+
 
 

@@ -39,6 +39,7 @@ $routes->group('', function($routes) {
         $routes->post('eliminar', 'TareaController::eliminar');
         $routes->post('archivar', 'TareaController::archivar');
         $routes->get('ver/(:num)', 'TareaController::ver/$1');
+        $routes->get('ver/(:num)(/:any)', 'TareaController::ver/$1/$2');
         $routes->post('actualizar/(:num)', 'TareaController::update/$1');
     });
     

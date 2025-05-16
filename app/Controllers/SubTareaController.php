@@ -57,7 +57,7 @@ public function crear()
             'prioridad' => $this->request->getPost('prioridad'),
             'id_responsable' => $this->request->getPost('id_responsable') ?: null,
             'asignado_es_admin' => $this->request->getPost('asignado_es_admin') ? 1 : 0,
-            'estado' => 'Definido',
+            'estado' => 'En proceso',
             'fecha_vencimiento' => $this->request->getPost('fecha_vencimiento') ?: null
         ];
 
@@ -68,8 +68,19 @@ public function crear()
         }
 
         $tarea = $this->tareaModel->find($tareaId);
-        if ($tarea['estado'] === 'Pendiente') {
+        if ($tarea['estado'] === 'Definida') {
             $this->tareaModel->update($tareaId, ['estado' => 'En proceso']);
+        }
+
+        $idResponsable = $this->request->getPost('id_responsable');
+        if (!empty($idResponsable)) {
+            $this->_notificarAsignacion(
+                $idResponsable,
+                $dataSubtarea['asunto'],
+                $tareaId,
+                $dataSubtarea['fecha_vencimiento'],
+                $dataSubtarea['prioridad']
+            );
         }
 
         $db->transComplete();
@@ -83,6 +94,47 @@ public function crear()
     }
 }
 
+
+private function _notificarAsignacion($idUsuario, $asuntoSubtarea, $idTarea, $fechaVencimiento, $prioridad)
+{
+    try {
+        $usuarioModel = new \App\Models\UsuarioModel();
+        $usuario = $usuarioModel->find($idUsuario);
+        
+        if (!$usuario || empty($usuario['email'])) {
+            log_message('warning', "No se pudo notificar al usuario ID {$idUsuario} - Email no encontrado");
+            return false;
+        }
+
+        $email = \Config\Services::email();
+        
+        $email->setTo($usuario['email']);
+        $email->setSubject('Has sido asignado a una nueva subtarea');
+        
+        $mensaje = view('emails/asignacion_subtarea', [
+            'nombre' => $usuario['username'],
+            'asuntoSubtarea' => $asuntoSubtarea,
+            'idTarea' => $idTarea,
+            'fechaVencimiento' => $fechaVencimiento,
+            'prioridad' => $prioridad,
+            'base_url' => base_url()
+        ]);
+        
+        $email->setMessage($mensaje);
+        
+        if (!$email->send()) {
+            log_message('error', 'Error al enviar email: ' . $email->printDebugger(['headers']));
+            return false;
+        }
+        
+        log_message('info', "Notificación enviada a {$usuario['email']} sobre subtarea {$asuntoSubtarea}");
+        return true;
+        
+    } catch (\Exception $e) {
+        log_message('error', 'Error en _notificarAsignacion: ' . $e->getMessage());
+        return false;
+    }
+}
 
     public function editar($subtareaId)
 {
@@ -130,37 +182,54 @@ public function cambiarEstado()
         'id' => 'required|integer',
         'estado' => 'required|string'
     ])) {
-        $mensaje = ['success' => false, 'message' => 'Datos inválidos'];
-
-        if ($this->request->isAJAX()) {
-            return $this->response->setJSON($mensaje);
-        } else {
-            return redirect()->back()->with('error', $mensaje['message']);
-        }
+        return $this->response->setJSON(['success' => false, 'message' => 'Datos inválidos']);
     }
 
     $subtareaId = $this->request->getPost('id');
     $nuevoEstado = $this->request->getPost('estado');
 
-    $subtarea = $this->subTareaModel->find($subtareaId);
-    if ($subtarea['id_responsable'] != session()->get('id')) {
-        $mensaje = ['success' => false, 'message' => 'No tienes permiso para esta acción'];
+    $subtarea = $this->subTareaModel->select('subtareas.*, tareas.estado as tarea_estado')
+                                   ->join('tareas', 'tareas.id = subtareas.id_tarea')
+                                   ->find($subtareaId);
 
-        if ($this->request->isAJAX()) {
-            return $this->response->setJSON($mensaje);
-        } else {
-            return redirect()->back()->with('error', $mensaje['message']);
-        }
+    if ($subtarea['id_responsable'] != session()->get('id')) {
+        return $this->response->setJSON(['success' => false, 'message' => 'No tienes permiso']);
     }
 
     $this->subTareaModel->update($subtareaId, ['estado' => $nuevoEstado]);
-    $mensaje = ['success' => true, 'message' => 'Estado actualizado'];
 
-    if ($this->request->isAJAX()) {
-        return $this->response->setJSON($mensaje);
-    } else {
-        return redirect()->back()->with('success', $mensaje['message']);
+    $todasSubtareas = $this->subTareaModel->where('id_tarea', $subtarea['id_tarea'])->findAll();
+
+    $todasCompletadas = true;
+    $alMenosUnaEnProceso = false;
+
+    foreach ($todasSubtareas as $st) {
+        if ($st['estado'] != 'Completada') {
+            $todasCompletadas = false;
+        }
+        if ($st['estado'] == 'En Proceso') {
+            $alMenosUnaEnProceso = true;
+        }
     }
+
+    $nuevoEstadoTarea = null;
+
+    if ($todasCompletadas) {
+        $nuevoEstadoTarea = 'Completada';
+    } elseif ($alMenosUnaEnProceso || $nuevoEstado == 'En Proceso') {
+        $nuevoEstadoTarea = 'En Proceso';
+    }
+
+    if ($nuevoEstadoTarea && $nuevoEstadoTarea != $subtarea['tarea_estado']) {
+        $this->tareaModel->update($subtarea['id_tarea'], ['estado' => $nuevoEstadoTarea]);
+    }
+
+    return $this->response->setJSON([
+        'success' => true,
+        'message' => 'Estado actualizado',
+        'nuevo_estado' => $nuevoEstado,
+        'nuevo_estado_tarea' => $nuevoEstadoTarea ?? $subtarea['tarea_estado']
+    ]);
 }
 
 public function eliminar()
@@ -179,6 +248,8 @@ public function eliminar()
     $this->subTareaModel->delete($subtareaId);
     return redirect()->back()->with('success', 'Subtarea eliminada correctamente');
 }
+
+
 
 
 }

@@ -73,7 +73,11 @@
                 <h3><?= esc($tarea['asunto']) ?></h3>
                 <small>Creada por: <?= esc($tarea['usuario_nombre']) ?> • Fecha límite: <?= $tarea['fecha_vencimiento'] ?></small>
             </div>
-            <?php if ($tareaModel->puedeEditarTarea($tarea['id'], session()->get('id'))): ?>
+            <?php 
+            // Solo mostrar botón de edición si es el creador o admin
+            $esCreador = $tarea['id_usuario'] == session()->get('id');
+            $esAdmin = session()->get('rol') == 'admin';
+            if ($esCreador || $esAdmin): ?>
                 <button class="btn btn-sm btn-light edit-task" title="Editar"
                     data-bs-toggle="modal" 
                     data-bs-target="#editarTareaModal"
@@ -167,7 +171,9 @@
 <div class="card mb-4">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h4>Subtareas</h4>
-        <?php if ($tareaModel->puedeEditarTarea($tarea['id'], session()->get('id'))): ?>
+        <?php 
+        // Solo mostrar botón de nueva subtarea si es creador o admin
+        if ($esCreador || $esAdmin): ?>
             <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#nuevaSubtareaModal">
                 <i class="fas fa-plus"></i> Nueva Subtarea
             </button>
@@ -184,11 +190,11 @@
                            Responsable: <?= esc($subtarea['responsable_nombre'] ?? 'Sin asignar') ?>
                             • Estado:
                             <?php if ($subtarea['id_responsable'] == session()->get('id')): ?>
-                                <form method="post" class="estado-form d-inline" data-id="<?= $subtarea['id'] ?>" action="<?= site_url('subtareas/cambiarEstado') ?>"onsubmit="return false;">
+                                <form method="post" class="estado-form d-inline" data-id="<?= $subtarea['id'] ?>" action="<?= site_url('subtareas/cambiarEstado') ?>">
                                     <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                                     <input type="hidden" name="id" value="<?= $subtarea['id'] ?>" />
-                                    <select name="estado" class="form-select form-select-sm d-inline-block w-auto" onchange="this.form.submit()">
-                                        <option value="En proceso" <?= $subtarea['estado'] == 'En proceso' ? 'selected' : '' ?>>En proceso</option>
+                                    <select name="estado" class="form-select form-select-sm d-inline-block w-auto estado-select">
+                                        <option value="En Proceso" <?= $subtarea['estado'] == 'En Proceso' ? 'selected' : '' ?>>En Proceso</option>
                                         <option value="Completada" <?= $subtarea['estado'] == 'Completada' ? 'selected' : '' ?>>Completada</option>
                                     </select>
                                 </form>
@@ -204,7 +210,15 @@
                         </small>
                     </div>
                     <div class="btn-group">
-                        <?php if ($subtareaModel->puedeEditarSubtarea($subtarea['id'], session()->get('id'))): ?>
+                        <?php 
+                        // Determinar permisos para esta subtarea específica
+                        $puedeEditarSubtarea = false;
+                        if ($esCreador || $esAdmin) {
+                            $puedeEditarSubtarea = true;
+                        } elseif ($subtarea['id_responsable'] == session()->get('id') && ($subtarea['asignado_es_admin'] ?? 0)) {
+                            $puedeEditarSubtarea = true;
+                        }
+                        if ($esCreador || $esAdmin): ?>
                             <button class="btn btn-sm btn-outline-secondary edit-subtask" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#editarSubtareaModal"
@@ -218,7 +232,8 @@
                             </button>
                         <?php endif; ?>
                         
-                        <?php if ($subtareaModel->puedeEditarSubtarea($subtarea['id'], session()->get('id'))): ?>
+                        <?php 
+                        if ($esCreador || $esAdmin): ?>
                             <button class="btn btn-sm btn-outline-danger" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#confirmarEliminarModal"
@@ -449,35 +464,52 @@ document.querySelectorAll('.edit-task').forEach(btn => {
 
 <!-- Script para manejar el cambio de estado -->
 <script>
-function cambiarEstado(select, id) {
-    const estado = select.value;
-    const csrfName = '<?= csrf_token() ?>';
-    const csrfHash = '<?= csrf_hash() ?>';
-
-    fetch("<?= site_url('subtareas/cambiarEstado') ?>", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-            [csrfName]: csrfHash,
-            id: id,
-            estado: estado
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Estado actualizado correctamente");
-        } else {
-            alert("Error: " + data.message);
-        }
-    })
-    .catch(error => {
-        alert("Error al actualizar el estado");
-        console.error("Error:", error);
+document.addEventListener('DOMContentLoaded', function() {
+    // Interceptar todos los selects de estado
+    document.querySelectorAll('.estado-select').forEach(select => {
+        select.addEventListener('change', function(e) {
+            e.preventDefault(); // Evitar envío normal del formulario
+            
+            const form = this.closest('form');
+            const formData = new FormData(form);
+            const select = this;
+            
+            // Mostrar carga
+            select.disabled = true;
+            const originalValue = select.value;
+            const originalText = select.selectedOptions[0].text;
+            select.selectedOptions[0].text = 'Actualizando...';
+            
+            // Enviar por AJAX
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest' // Identificar como AJAX
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Recargar solo la página para ver cambios
+                    window.location.reload();
+                } else {
+                    alert('Error: ' + (data.message || 'No se pudo actualizar'));
+                    select.value = originalValue;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error de conexión');
+                select.value = originalValue;
+            })
+            .finally(() => {
+                select.disabled = false;
+                select.selectedOptions[0].text = originalText;
+            });
+        });
     });
-}
+});
 </script>
 
 
